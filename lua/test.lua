@@ -406,4 +406,28 @@ function test_arg()
     print(arg[0])
 end
 
-test_arg()
+function test_function_class()
+    function foo()
+        local i = 1
+        local self = {}
+
+        function self.bar()
+            i = i + 1
+            print(i)
+        end
+
+        return self
+    end
+
+    local f1 = foo()
+    local f2 = foo()
+
+    print(f1.bar())
+    print(f2.bar())
+    print(f1.bar())
+    print(f2.bar())
+    print(f1.bar())
+    print(f2.bar())
+end
+
+test_function_class()

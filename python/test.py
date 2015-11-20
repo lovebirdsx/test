@@ -140,5 +140,9 @@ def test_for():
 	for x in xrange(1,10):
 		print(x)
 
-test_for()
-		
+def test_arg():
+	print(sys.argv[0])
+	if len(sys.argv) > 1:
+		print(sys.argv[1])
+
+test_arg()

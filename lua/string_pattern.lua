@@ -53,4 +53,7 @@ function test_get_api_line()
 	print(get_api_line('function foo(bar, ...) end'))
 end
 
-test_get_api_line()
+-- test_get_api_line()
+local s = 'gen_point.lua'
+print(s:match('[%a_]+'))
+print(string.match(s, '[%a_]+'))
