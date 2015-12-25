@@ -1,6 +1,6 @@
 function create_ops(obj)
     local ops, state_funs = {}, {}
-    local curr_state_fun, curr_state_cfg, s_id, state_list, is_loop
+    local curr_state_fun, curr_state_cfg, s_id, state_list, loop_left
     local next_update_time, is_paused
     local empty_bool_fun = function () return true end
     local empty_void_fun = function () end
@@ -13,7 +13,7 @@ function create_ops(obj)
         }
     end
 
-    function ops._reg_default_ops()
+    local function reg_default_ops()
         local default = {}
         local wait_end
         function default.enter_wait(time)
@@ -39,6 +39,14 @@ function create_ops(obj)
             else
                 send_user_msg(param.type)
             end
+        end
+
+        function default.enter_start_ops(ops, op_list, loop)
+            ops.start(op_list, loop)
+        end
+
+        function default.update_wait_ops(ops)
+            return ops.is_finish()
         end
 
         ops.auto_reg(default)
@@ -71,9 +79,9 @@ function create_ops(obj)
         end
     end
 
-    function ops.start(list, loop)
+    function ops.start(list, loop_times)
         state_list = list
-        is_loop = loop or false
+        loop_left = loop_times or 1
         is_paused = false
         s_id = 0
         ops._enter_next_state()
@@ -87,33 +95,45 @@ function create_ops(obj)
         is_paused = false
     end
 
+    local function unpack(t)
+        if t then return table.unpack(t) end
+    end
+
     function ops._enter_next_state()
         if ops.is_finish() then return end
 
         if s_id >= 1 then
-            curr_state_fun.exit(table.unpack(curr_state_cfg.param))
+            curr_state_fun.exit(unpack(curr_state_cfg.param))
         end
 
         s_id = s_id + 1
 
-        if is_loop and s_id > #state_list then
-            s_id = 1
+        if s_id > #state_list then
+            if loop_left > 0 then
+                loop_left = loop_left - 1
+                if loop_left > 0 then
+                    s_id = 1
+                end
+            elseif loop_left == -1 then
+                s_id = 1
+            end            
         end
 
         if s_id <= #state_list then
-            curr_state_cfg = state_list[s_id]
+            curr_state_cfg = state_list[s_id]            
             curr_state_fun = state_funs[curr_state_cfg.op]
-            curr_state_fun.enter(table.unpack(curr_state_cfg.param))
+            assert(curr_state_fun, 'can not find op type ' .. curr_state_cfg.op)
+            curr_state_fun.enter(unpack(curr_state_cfg.param))
             next_update_time = get_time()
         end
     end
 
     function ops.frame()
-        if ops.is_finish() or is_paused then return end
+        if is_paused or ops.is_finish() then return end
 
         local now = get_time()
         if now >= next_update_time then
-            local r = curr_state_fun.update(table.unpack(curr_state_cfg.param))
+            local r = curr_state_fun.update(unpack(curr_state_cfg.param))
             if r then
                 ops._enter_next_state()
             else
@@ -135,12 +155,13 @@ function create_ops(obj)
     end
 
     function ops.init(obj)
-        ops._reg_default_ops()
+        reg_default_ops()
         if obj then
             ops.auto_reg(obj)
         end
+        is_paused = true
     end
 
-    ops.init()
+    ops.init(obj)
     return ops
 end

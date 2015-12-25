@@ -12,11 +12,21 @@
 
 ---------------------------------------------------
 -- select
-function test_select(...)
-	print(select(2, ...))
-end
+-- function test_select(...)
+-- 	print(select(2, ...))
+-- end
 
-test_select(1,2,3,4,5,6)
-print(select(3, 1,2,3,4,5,6))
-local a = select(2, 1,2,3)
-print(a)
+-- test_select(1,2,3,4,5,6)
+-- print(select(3, 1,2,3,4,5,6))
+-- local a = select(2, 1,2,3)
+-- print(a)
+
+---------------------------------------------------
+-- assert
+-- assert(false, 'hello assert')
+
+local i = 1
+repeat
+	print('hello')
+	i = i + 1
+until i > 5

@@ -1,0 +1,148 @@
+{
+	"dialog" :
+	[
+		{
+			"type" : "zz1",
+			"layout" :
+			{
+				"col" : 2
+			},
+			"widget" :
+			[
+				{
+					"type" : "text",
+					"title" : "Name",
+					"key" : "name"
+				},
+				{
+					"type" : "choice",
+					"title" : "camp",
+					"key" : "camp",
+					"default" : 1,
+					"choices" :
+					[
+						{
+							"value" : "enemy",
+							"title" : "enemy"
+						},
+						{
+							"value" : "neutral",
+							"title" : "neutral"
+						},
+						{
+							"value" : "ally",
+							"title" : "ally"
+						}				
+					]
+				},
+				{
+					"type" : "choice",
+					"title" : "type",
+					"key" : "type",
+					"choices" :
+					[
+						{
+							"value" : "SaleEllickMember",
+							"title" : "SaleEllickMember"
+						},
+						{
+							"value" : "SaleHenry",
+							"title" : "SaleHenry"
+						}
+					]
+				},
+				{
+					"type" : "choice",
+					"title" : "squad",
+					"key" : "squad",
+					"choices" :
+					[
+						{
+							"value" : "squad1",
+							"title" : "squad1"
+						}
+					]
+				},
+				{
+					"type" : "check box",
+					"title" : "leader",
+					"key" : "leader",
+					"default" : false
+				},
+				{
+					"type" : "choice",
+					"title" : "dir",
+					"key" : "dir",
+					"choices" :
+					[
+						{
+							"value" : "n",
+							"title" : "North"
+						},	
+						{
+							"value" : "ne",
+							"title" : "NorthEast"
+						},	
+						{
+							"value" : "e",
+							"title" : "East"
+						},	
+						{
+							"value" : "se",
+							"title" : "SouthEast"
+						},	
+						{
+							"value" : "s",
+							"title" : "South"
+						},	
+						{
+							"value" : "sw",
+							"title" : "SouthWest"
+						},	
+						{
+							"value" : "w",
+							"title" : "West"
+						},
+						{
+							"value" : "nw",
+							"title" : "NorthWest"
+						}
+					]
+				},
+				{
+					"type" : "check box",
+					"title" : "SceneAI",
+					"key" : "scene_ai",
+					"default" : false
+				},
+				{
+					"type" : "check box",
+					"title" : "GodSight",
+					"key" : "god_sight",
+					"default" : false
+				}
+			]
+		},
+		{
+			"type" : "zz2",
+			"layout" :
+			{
+				"col" : 1
+			},
+			"widget" :
+			[
+				{
+					"type" : "text",
+					"title" : "Name",
+					"key" : "name"
+				},
+				{
+					"type" : "check box",
+					"title" : "GodSight",
+					"key" : "god_sight",
+					"default" : false
+				}
+			]
+		}
+	]
+}

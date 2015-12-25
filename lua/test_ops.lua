@@ -42,16 +42,18 @@ end
 ops.reg('foo', foo())
 ops.reg('bar', bar())
 
-ops.start {
+local op_list = {
 	{op = 'foo', param = {'hello'}},
 	{op = 'bar', param = {'what', 'the', 'fuck'}},
 	{op = 'foo', param = {'world'}},
 	{op = 'bar', param = {'god', 'like'}}
 }
+ops.start(op_list)
+while not ops.is_finish() do ops.frame() end
 
-while not ops.is_finish() do
-	ops.frame()
-end
+ops.start(op_list, 2)
+while not ops.is_finish() do ops.frame() end
+
 
 -- ********************************************************
 -- Test Auto Reg
