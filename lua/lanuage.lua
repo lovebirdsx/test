@@ -25,8 +25,12 @@
 -- assert
 -- assert(false, 'hello assert')
 
-local i = 1
-repeat
-	print('hello')
-	i = i + 1
-until i > 5
+-- local i = 1
+-- repeat
+-- 	print('hello')
+-- 	i = i + 1
+-- until i > 5
+
+print(false or false or 1)
+print(false or 1 or 2)
+print(1 or 2 or 3)

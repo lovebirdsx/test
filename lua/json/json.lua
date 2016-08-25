@@ -286,7 +286,7 @@ local OBJDEF = {
 --
 ---------------------------------------------------------------------------
 
-local default_pretty_indent  = "  "
+local default_pretty_indent  = "\t"
 local default_pretty_options = { pretty = true, align_keys = false, indent = default_pretty_indent }
 
 local isArray  = { __tostring = function() return "JSON array"  end }    isArray.__index  = isArray

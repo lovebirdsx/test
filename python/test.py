@@ -32,7 +32,7 @@ def test_file():
 	print(os.path.exists('e:/program/a'))
 	print(os.path.exists('e:/program/aaa'))
 
-def test_parm():	
+def test_parm():
 	def foo(a,b,c):
 		print('a=', a)
 		print('b=', b)
@@ -67,8 +67,14 @@ def test_dict():
 		)
 	}
 
-	for k in dic:
-		print(k, dic[k])
+	# for k in dic:
+	# 	print(k, dic[k])
+
+	for (k, v) in dic.items():
+		print(k, v)
+
+	for k in dic.keys():
+		print(k)
 
 def test_system():
 	os.system('echo hello')
@@ -93,7 +99,7 @@ def test_exception():
 def test_listbox():
 	root = Tk()
 	def printList(event):
-	    print lb.get(lb.curselection()) 
+	    print lb.get(lb.curselection())
 	lb = Listbox(root)
 	lb.bind('<<ListboxSelect>>',printList)
 	for i in range(10):
@@ -108,8 +114,8 @@ def test_checkbutton():
 	root = Tk()
 	var = IntVar()
 	chk = Checkbutton(root, text='hello', variable=var, command=var_states)
-	chk.pack()	
-	
+	chk.pack()
+
 
 	root.mainloop()
 
@@ -124,17 +130,17 @@ def test_sub_string():
 	print(path[0 : -7] + 'ext_lr.json')
 
 def test_str_find():
-	path = 'sale/sale1_lr.json'	
+	path = 'sale/sale1_lr.json'
 	print(path.rfind('/'))
 
 def get_lr_name(path):
 	sep_id = path.rfind('/')
 	return path[sep_id + 1 : -8]
 
-def test_lr_name():	
+def test_lr_name():
 	print(get_lr_name('sale/sale1_lr.json'))
 	print(get_lr_name('sale1_lr.json'))
-	print(get_lr_name('sale1/sale/sale1_lr.json'))	
+	print(get_lr_name('sale1/sale/sale1_lr.json'))
 
 def test_for():
 	for x in xrange(1,10):
@@ -145,4 +151,18 @@ def test_arg():
 	if len(sys.argv) > 1:
 		print(sys.argv[1])
 
-test_arg()
+def test_default_arg():
+	def foo(a, b='default_b'):
+		print(a, b)
+
+	foo('hello')
+	foo('hello', 'world')
+
+def test_list():
+	a = (1,2,3)
+	for x in a:
+		print x
+	for i in range(0, len(a)):
+		print a[i]
+
+test_dict()

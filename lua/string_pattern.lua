@@ -32,10 +32,10 @@
 -- print(string.match('%*^', '%%%*%^'))
 
 -- Return sevaral result
-print(string.match('foo: 123 bar:456', '(%a+):%s*(%d+)%s+(%a+):%s*(%d+)'))
-print(string.match('update_foo', 'update_([%a_]+)'))
-print(string.match('enter_foo_bar', 'enter_([%a_]+)'))
-print(string.match('exit_foo_bar_car', 'exit_([%a_]+)'))
+-- print(string.match('foo: 123 bar:456', '(%a+):%s*(%d+)%s+(%a+):%s*(%d+)'))
+-- print(string.match('update_foo', 'update_([%a_]+)'))
+-- print(string.match('enter_foo_bar', 'enter_([%a_]+)'))
+-- print(string.match('exit_foo_bar_car', 'exit_([%a_]+)'))
 
 -- U can not use:
 -- '(foo)+' '(foo|bar)'
@@ -58,3 +58,30 @@ print(string.match('exit_foo_bar_car', 'exit_([%a_]+)'))
 -- local s = 'gen_point.lua'
 -- print(s:match('[%a_]+'))
 -- print(string.match(s, '[%a_]+'))
+
+
+-- local arg = 'play=kill_survival,survival diff=1'
+-- print('map start args:')
+-- for k, v in string.gmatch(arg, "(%w+)=([%w_,]+)") do
+--     print(k, v)
+-- end
+
+
+-- function string.split(str, sep)
+--     local sep, fields = sep or ":", {}
+--     local pattern = string.format("([^%s]+)", sep)
+--     str:gsub(pattern, function(c) fields[#fields+1] = c end)
+--     return fields
+-- end
+
+-- local fields = string.split('kill_survival,survival', ',')
+-- for i = 1, #fields do
+-- 	print(fields[i])
+-- end
+
+-- local arg = 'name=剧情本1-1; time=10;  hello=world; 你好=世界'
+-- for k, v in string.gmatch(arg, '([^; ]+)=([^; ]+)') do
+--     print(string.format('%s = %s', k, v))
+-- end
+
+print(string.find('头顶-遇到蔡文姬', '头顶'))

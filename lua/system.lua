@@ -1,5 +1,7 @@
-print(os.getenv('APPDATA'))
+-- print(os.getenv('APPDATA'))
 
-for k,v in pairs(os) do
-	print(k,v)
-end
+-- for k,v in pairs(os) do
+-- 	print(k,v)
+-- end
+
+print(arg[0])

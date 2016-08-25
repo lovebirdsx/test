@@ -430,4 +430,9 @@ function test_function_class()
     print(f2.bar())
 end
 
-test_function_class()
+function test_array()
+    local a = {nil, 1, 2, 3}
+    print(table.unpack(a))
+end
+
+-- test_array()
