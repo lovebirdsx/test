@@ -1,3 +1,5 @@
+assert(_VERSION == 'Lua 5.3')
+
 local DIR_N = 1
 local DIR_N_NE = 9
 local DIR_NE = 2
@@ -65,13 +67,15 @@ local INDEX_TO_DIR = {
 function pos2dir(a, b)
     local pa = format_pos(a)
     local pb = format_pos(b)
+    local PI = math.pi
 
     local a = math.atan(pb.y - pa.y, pb.x - pa.x)
-    if a < 0 then a = a + math.pi * 2 end
-    local div_a = 2 * math.pi / 16
-    local index = math.floor((a - div_a / 2) / div_a + 0.5)
-    print(string.format('(%s,%s)->(%s,%s) a = %s deg = %s index = %s', pa.x, pa.y, pb.x, pb.y, a, math.deg(a), index))
+    if a < 0 then a = a + PI * 2 end
+    local div_a = 2 * PI / 16
+
+    local index = math.ceil(a/div_a - 0.5)
     if index == 0 then index = 16 end
+
     return INDEX_TO_DIR[index]
 end
 
@@ -97,21 +101,6 @@ function dir2str(dir)
     return DIR_TO_STRING[dir]
 end
 
-function test_pos2dir_by_angle(a)
-    local p1 = {x = 0 , y = 0}
-    local x2, y2 = 100 * math.cos(a), 100 * math.sin(a)
-    local p2 = {x = x2, y = y2}
-    local dir = pos2dir(p1, p2)
-    print(string.format('angle = %s, result = %s', math.deg(a), dir2str(dir)))
-end
-
-function test_pos2dir()
-    for i = 1, 32 do
-        local a = math.pi * 2 / 32 * i
-        test_pos2dir_by_angle(a)
-    end
-end
-
 function test_math_atan()
     local function help(x, y)
         local atan = math.atan(y, x)
@@ -129,8 +118,22 @@ function test_math_atan()
     help(1, -1)
 end
 
+function output_dirs()
+    for dir, a in pairs(DIR_ANGLES) do
+        print(string.format('%s = %g', dir2str(dir), math.deg(a)))
+    end
+end
+
+function test_pos2dir()
+    local dir_a = math.pi / 16
+    for dir, a in pairs(DIR_ANGLES) do
+        for _, a0 in ipairs({a - dir_a / 2 - 0.0001, a, a + dir_a / 2 - 0.0001}) do
+            local p1 = {x = 0, y = 0}
+            local p2 = {x = 100 * math.cos(a), y = 100 * math.sin(a)}
+            local dir2 = pos2dir(p1, p2)
+            assert(dir == dir2)
+        end
+    end
+end
+
 test_pos2dir()
--- test_pos2dir_by_angle(math.pi * 2 / 32 * 16)
--- test_pos2dir_by_angle(math.pi * 2 / 32 * 17)
--- print(_VERSION)
--- test_math_atan()
