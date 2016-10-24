@@ -63,13 +63,18 @@ end
 function table.contains(t1, t2)
     local r = {}
     for _, e in ipairs(t1) do
-        r[e] = true
+        if r[e] then
+        	r[e] = r[e] + 1
+        else
+        	r[e] = 1
+        end
     end
 
     for _, e in ipairs(t2) do
-        if not r[e] then
+        if not r[e] or r[e] <= 0 then
             return false
         end
+        r[e] = r[e] - 1
     end
 
     return true
@@ -91,5 +96,3 @@ local t = {1,2,3,4,5}
 print(table.tostring(t))
 print(table.tostring(table.reverse(t)))
 --]]
-
-
