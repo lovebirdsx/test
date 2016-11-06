@@ -80,7 +80,7 @@ function table.contains(t1, t2)
     return true
 end
 
---[[table.tostirng
+-- table.tostirng
 print(table.tostring({
 	b = {
 		foo = 1,
@@ -89,7 +89,7 @@ print(table.tostring({
 	},
 	a = wahaha
 }))
---]]
+
 
 --[[table.reverse
 local t = {1,2,3,4,5}
