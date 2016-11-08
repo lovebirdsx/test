@@ -3,3 +3,6 @@
 -- local a = {1,2,nil}
 -- print(#a)
 
+print(type(1))
+print(type(true))
+print(type(function () end))

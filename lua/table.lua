@@ -96,3 +96,7 @@ local t = {1,2,3,4,5}
 print(table.tostring(t))
 print(table.tostring(table.reverse(t)))
 --]]
+
+
+local a = {nil, 2, 3}
+print(table.unpack(nil))
