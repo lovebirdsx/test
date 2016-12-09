@@ -3,6 +3,4 @@
 -- local a = {1,2,nil}
 -- print(#a)
 
-print(type(1))
-print(type(true))
-print(type(function () end))
+print(1500 * 9976 / 3500)
