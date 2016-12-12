@@ -58,7 +58,9 @@ function get_unit_name(short_name, is_boss, troop_type)
 end
 
 local function get_unit_order(short_name)
-	return assert(UNITS_ORDER_ID_MAP[short_name], '找到不到order id' .. short_name)
+	local order = UNITS_ORDER_ID_MAP[short_name]
+	assert(order, '找到不到order id' .. short_name)
+	return order
 end
 
 function parse_group_name(name)
@@ -192,13 +194,13 @@ end
 local function gen_groups_2_hh_x_x(h1, h2, difficulty, is_boss)
 	local s1_counts, s2_counts
 	if difficulty == '普通' then
-		s1_counts = {0, 2, 4}
-		s2_counts = range(2, 6)
+		s1_counts = range(0, 3)
+		s2_counts = range(0, 6)
 	elseif difficulty == '困难' then
-		s1_counts = {3}
-		s2_counts = range(2, 8)
+		s1_counts = range(0, 3)
+		s2_counts = range(0, 8)
 	elseif difficulty == '超难' then
-		s1_counts = {4}
+		s1_counts = {3}
 		s2_counts = range(2, 16)
 	else
 		error(string.format('[%s, %s] 不支持难度 [%s]', h1, h2, difficulty))
@@ -260,10 +262,10 @@ local function gen_groups_2_hs_1_x(h, s, difficulty, is_boss)
 	local hs_counts, s_counts
 	if difficulty == '简单' then
 		hs_counts = {0, 2}
-		s_counts = range(2, 6)
+		s_counts = range(1, 6)
 	elseif difficulty == '普通' then
 		hs_counts = {0, 2}
-		s_counts = range(2, 6)
+		s_counts = range(1, 6)
 	elseif difficulty == '困难' then
 		hs_counts = {0, 2, 4}
 		s_counts = range(2, 16)
@@ -289,11 +291,11 @@ local function gen_groups_2_hs_2_1(h, s, difficulty, is_boss)
 	-- 小兵在前排, 填补英雄的小兵
 	local hs_counts, s_counts
 	if difficulty == '简单' then
-		hs_counts = range(2, 4)
+		hs_counts = range(0, 4)
 		s_counts = {1, 2}
 	elseif difficulty == '普通' then
-		hs_counts = range(2, 6)
-		s_counts = {2, 3, 4}
+		hs_counts = range(0, 6)
+		s_counts = {1, 2, 3, 4}
 	elseif difficulty == '困难' then
 		hs_counts = range(2, 12)
 		s_counts = {4}
@@ -319,13 +321,13 @@ local function gen_groups_2_hs_2_2(h, s, difficulty, is_boss)
 	-- 小兵在后排, 填补同类型小兵
 	local hs_counts, s_counts
 	if difficulty == '简单' then
-		hs_counts = {2}
-		s_counts = range(2, 6)
+		hs_counts = {0, 1, 2}
+		s_counts = range(1, 6)
 	elseif difficulty == '普通' then
-		hs_counts = {2, 4}
-		s_counts = range(2, 8)
+		hs_counts = {0, 1, 2, 3, 4}
+		s_counts = range(1, 8)
 	elseif difficulty == '困难' then
-		hs_counts = {4}
+		hs_counts = {0, 1, 2, 3, 4}
 		s_counts = range(2, 12)
 	elseif difficulty == '超难' then
 		hs_counts = {4}
@@ -364,8 +366,8 @@ local function gen_groups_2_ss_x_x(s1, s2, difficulty, is_boss)
 	local s1_counts, s2_counts
 
 	if difficulty == '简单' then
-		s1_counts = range(2, 6)
-		s2_counts = range(2, 6)
+		s1_counts = range(1, 6)
+		s2_counts = range(1, 6)
 	elseif difficulty == '普通' then
 		s1_counts = range(2, 8)
 		s2_counts = range(2, 8)
@@ -394,7 +396,7 @@ local function gen_groups_2_ss_1_2(s1, s2, difficulty, is_boss)
 
 	-- 有前后排
 	if difficulty == '简单' then
-		s1_counts = range(2, 4)
+		s1_counts = range(1, 4)
 		s2_counts = range(1, 4)
 	elseif difficulty == '普通' then
 		s1_counts = range(2, 4)
@@ -451,11 +453,11 @@ end
 local function gen_groups_3_hhh_1_2_2(h1, h2, h3, difficulty, is_boss)	
 	local s1_counts, s2_counts, s3_counts
 	if difficulty == '困难' then
-		s1_counts = {0, 2}
-		s2_counts = {3}
-		s3_counts = range(3, 12)
+		s1_counts = {0, 2, 4}
+		s2_counts = range(0, 3)
+		s3_counts = range(0, 12)
 	elseif difficulty == '超难' or difficulty == '变态' then		
-		s1_counts = is_boss and {0, 2, 4} or {4}
+		s1_counts = {0, 2, 4}
 		s2_counts = {3}
 		s3_counts = range(3, 12)
 	else
@@ -467,14 +469,12 @@ local function gen_groups_3_hhh_1_2_2(h1, h2, h3, difficulty, is_boss)
 	local m2 = get_member_by_name(h2)
 	local m3 = get_member_by_name(h3)
 	for _, s1_count in ipairs(s1_counts) do
-		if is_boss then
-			for s23_count = 0, 2 do
-				add_group(groups, 'heros',
-							h1, 1, m1, s1_count,
-							h2, 1, m2, s23_count,
-							h3, 1, m3, s23_count
-				)
-			end
+		for s23_count = 0, 2 do
+			add_group(groups, 'heros',
+						h1, 1, m1, s1_count,
+						h2, 1, m2, s23_count,
+						h3, 1, m3, s23_count
+			)
 		end
 
 		for _, s2_count in ipairs(s2_counts) do
