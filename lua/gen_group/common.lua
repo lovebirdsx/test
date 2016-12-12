@@ -1,3 +1,7 @@
+if not import then import = require end
+
+local File = import('file')
+
 local UNITS_MAP = {
 	['铁兵'] = '铁骑',
 	['盾兵'] = '盾甲',
@@ -13,23 +17,40 @@ local UNITS_MAP = {
 	['法英'] = '法师英雄',
 	['刺英'] = '刺客英雄',
 
+	['[B]铁英'] = '[B]铁骑英雄',
+	['[B]盾英'] = '[B]盾甲英雄',
+	['[B]强英'] = '[B]强弓英雄',
+	['[B]炼英'] = '[B]炼金英雄',
+	['[B]法英'] = '[B]法师英雄',
+	['[B]刺英'] = '[B]刺客英雄',
+
 	['教徒'] = '教徒',
 }
 
 local UNITS_ORDER_MAP = {
-	'盾英',
 	'铁英',
+	'[B]铁英',
 	'特铁英',
+	'盾英',
+	'[B]盾英',
+	'[B]特铁英',
 	'强英',
+	'[B]强英',
 	'特强英',
+	'[B]特强英',
 	'炼英',
+	'[B]炼英',
 	'特炼英',
+	'[B]特炼英',
 	'法英',
+	'[B]法英',
 	'特法英',
+	'[B]特法英',
 	'刺英',
+	'[B]刺英',
 	'教徒',
-	'盾兵',
 	'铁兵',
+	'盾兵',
 	'强兵',
 	'炼兵',
 	'法兵',
@@ -52,7 +73,7 @@ function get_unit_name(short_name, is_boss, troop_type)
 	local short_id = string.gsub(short_name, '特', '')
 	local name_str = assert(UNITS_MAP[short_id], short_name)
 	local is_hero = is_hero_by_name(name_str)
-	local boss_str = (is_boss and is_hero) and '[B]' or ''
+	local boss_str = (is_boss and is_hero) and '[B]' or ''	
 	local troop_str = (troop_type == '三国') and '' or troop_type
 	return boss_str .. special_str .. troop_str .. name_str
 end
@@ -65,12 +86,12 @@ end
 
 function parse_group_name(name)
 	local troop_type, difficulty, units_type = string.match(name, '([^-]+)-([^-]+)-([^-]+)')
+	-- 注意: 队伍中武将要么全是[B],要么全不是,所以此处可以用第一武将的[B]前缀来判断队伍是否为boss类型队伍
 	local is_boss = string.sub(units_type, 1, 3) == '[B]'
-	local units_str = is_boss and string.sub(units_type, 4) or units_type
 	local units = {}
 	local last_unit_order = 0
-	for k, v in string.gmatch(units_str, '([^+]+)') do
-		local unit_id = k
+	for k, v in string.gmatch(units_type, '([^+]+)') do
+		local unit_id = (string.sub(k, 1, 3) == '[B]') and string.sub(k, 4) or k
 		local unit_name = get_unit_name(unit_id, is_boss, troop_type)
 		local unit_order = get_unit_order(unit_id)
 		assert(unit_order >= last_unit_order, name)
@@ -795,4 +816,60 @@ function groups_normal_to_special(group, origin_name)
 	end
 
 	return group
+end
+
+function get_gen_group_names(input_path, output_path)
+	local input_t = File.read_table(input_path)
+	local output_t = File.read_table(output_path)
+
+	local output_by_names = {}
+	for i = 1, output_t.row_count do
+		local r = output_t.rows[tostring(i)]
+		output_by_names[r.GroupName] = r
+	end
+
+	local names = {}
+	for i = 1, input_t.row_count do
+		local ri = input_t.rows[tostring(i)]
+		local ro = output_by_names[ri.GroupName]		
+		if not ri.IgnoreGen and ((not ro) or ro.VersionID ~= ri.VersionID) then			
+			table.insert(names, ri.GroupName)
+		end
+	end
+
+	return names
+end
+
+function update_group_output(results, input_path, output_path)
+	local input_t = File.read_table(input_path)
+	local output_t = File.read_table(output_path)
+
+	local input_by_names = {}
+	for i = 1, input_t.row_count do
+		local r = input_t.rows[tostring(i)]
+		input_by_names[r.GroupName] = r
+	end
+	
+	local output_by_names = {}
+	for i = 1, output_t.row_count do
+		local r = output_t.rows[tostring(i)]
+		output_by_names[r.GroupName] = r
+	end
+
+	for _, r in ipairs(results) do
+		local name, units = r.name, r.units
+		local ri = input_by_names[name]
+		local ro = output_by_names[name]
+		ro.VersionID = ri.VersionID
+
+		for monster_id = 1, 24 do
+			ro['Monster' .. monster_id] = nil
+		end
+
+		for i, u in ipairs(units) do
+			ro['Monster' .. i] = u
+		end
+	end
+
+	File.write_table(output_path, output_t)
 end
