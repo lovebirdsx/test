@@ -10,9 +10,9 @@ function test_all()
 end
 
 function test.parse_group_name()
-	local g = parse_group_name('三国-困难-[B]铁英+[B]特强英')
-	assert(g.troop_type == '三国')	
-	assert(g.difficulty == '困难')	
+	local g = parse_group_name('三国-困难-[B]铁英+特强英')
+	assert(g.troop_type == '三国')
+	assert(g.difficulty == '困难')
 	assert(g.is_boss)
 	assert(g.units[1] == '[B]铁骑英雄')	
 	assert(g.units[2] == '[B]特殊强弓英雄')
@@ -136,8 +136,8 @@ function test.groups_normal_to_special()
 end
 
 local GROUP_NAMES = {
-	'三国-超难-[B]刺英+[B]法兵',
-	'三国-超难-[B]盾英+[B]刺英+[B]刺英',
+	'三国-超难-[B]刺英+法兵',
+	'三国-超难-[B]盾英+刺英+刺英',
 	'三国-超难-刺英+刺英',
 	'三国-超难-盾英+特强英+法英',
 	'三国-普通-铁兵+法兵+刺兵',
@@ -177,4 +177,5 @@ function test.update_group_output()
 end
 
 -- test.get_gen_group_names()
-test.update_group_output()
+-- test.update_group_output()
+test_all()
