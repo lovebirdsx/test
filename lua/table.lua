@@ -80,6 +80,15 @@ function table.contains(t1, t2)
     return true
 end
 
+function table.array_to_kv(t, key)
+	local r = {}
+	for _, e in ipairs(t) do
+		assert(e[key], 'no key ' .. key)
+		r[e[key]] = e
+	end
+	return r
+end
+
 -- table.tostirng
 print(table.tostring({
 	b = {
@@ -89,6 +98,16 @@ print(table.tostring({
 	},
 	a = wahaha
 }))
+
+print(table.tostring(
+	table.array_to_kv(
+		{
+			{name='foo', value='foo_value'},
+			{name='bar', value='bar_value'},
+		},
+		'name'
+	)
+))
 
 
 --[[table.reverse
