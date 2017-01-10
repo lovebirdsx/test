@@ -1,0 +1,7 @@
+
+{
+	"GroupInputJsonPath": "E:\\git_project\\monster_group_gen\\group_input.json",
+	"GroupOutputJsonPath": "E:\\git_project\\monster_group_gen\\group_output.json",
+	"StageDifficultyPath": "E:\\svn_project\\mp\\LR\\design\\S数值规划\\关卡难度.xlsx",
+	"StageEnemyPath": "E:\\git_project\\lr_common\\design\\stage_enemy.xml"
+}

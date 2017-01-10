@@ -35,4 +35,18 @@ function main()
 	return 0
 end
 
-main()
+function test()
+	local t = {
+		['GroupInputJsonPath'] = 'E:\\git_project\\monster_group_gen\\group_input.json',
+		['GroupOutputJsonPath'] = 'E:\\git_project\\monster_group_gen\\group_output.json',
+		['StageEnemyPath'] = 'E:\\git_project\\lr_common\\design\\stage_enemy.xml',
+		['StageDifficultyPath'] = 'E:\\svn_project\\mp\\LR\\design\\S数值规划\\关卡难度.xlsx',
+	}
+
+	local out = JSON:encode_pretty(t)
+	write_file('config.json', out)
+end
+
+test()
+
+-- main()
