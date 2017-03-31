@@ -1,4 +1,4 @@
-{
+return {
 	layout = {
 		col = 3
 	},

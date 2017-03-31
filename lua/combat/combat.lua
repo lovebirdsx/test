@@ -38,7 +38,7 @@ function Effect:apply_attr_modifier(attr_id, attr, criteria)
 end
 
 function Effect:on_recv_dmg(char, dmg_info)
-	d
+	
 end
 
 Modifier = class(function (self)
