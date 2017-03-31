@@ -1,3 +1,5 @@
+require 'table'
+
 function foo(a, b)
 	print(type(a))
 	print(type(b))
@@ -25,8 +27,9 @@ local function get_best_row_col(n, max_row, max_col)
 end
 
 function main()
-	for i = 1, 21 do
-		print(i, get_best_row_col(i))
+	-- print(table.tostring({1,2,3}))
+	for k, v in pairs(table) do
+		print(k,v)
 	end
 end
 
