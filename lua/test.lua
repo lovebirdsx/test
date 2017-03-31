@@ -432,7 +432,11 @@ end
 
 function test_array()
     local a = {nil, 1, 2, 3}
-    print(table.unpack(a))
+    if _VERSION == 'Lua 5.1' then
+        print(unpack(a))
+    else
+        print(table.unpack(a))
+    end
 end
 
--- test_array()
+test_array()
