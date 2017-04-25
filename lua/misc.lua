@@ -1,35 +1,27 @@
 require 'table'
 
-function foo(a, b)
-	print(type(a))
-	print(type(b))
+local Config = {}
+local vmath = {}
+
+function vmath.vector4(a, b, c, d)
+	return {v1 = a, v2 = b, v3 = c, v4 = d}
 end
 
-local function get_best_row_col(n, max_row, max_col)
-	max_row = max_row or 4
-	max_col = max_col or 4
 
-	if n > max_col * max_row then
-		local row = (n % max_col == 0) and (n / max_col) or math.ceil(n / max_col)
-		return row, max_col
-	else
-		local best_r, best_c = 1, max_row * max_col
-		for r = 1, max_row do
-			for c = 1, max_col do
-				if r <= c and r * c >= n and r + c < best_r + best_c then
-					best_r = r
-					best_c = c
-				end
-			end
-		end
-		return best_r, best_c
-	end	
-end
+Config.HexColors = {
+	vmath.vector4(255 / 255, 165 / 255, 138 / 255, 1),
+	vmath.vector4(255 / 255, 220 / 255, 138 / 255, 1),
+	vmath.vector4(138 / 255, 255 / 255, 153 / 255, 1),
+	vmath.vector4(138 / 255, 255 / 255, 249 / 255, 1),
+	vmath.vector4(138 / 255, 142 / 255, 255 / 255, 1),
+	vmath.vector4(178 / 255, 138 / 255, 255 / 255, 1),
+	vmath.vector4(255 / 255, 138 / 255, 181 / 255, 1),
+}
+
 
 function main()
-	-- print(table.tostring({1,2,3}))
-	for k, v in pairs(table) do
-		print(k,v)
+	for i, c in ipairs(Config.HexColors) do
+		print(string.format('%2f %2f %2f %2f', c.v1, c.v2, c.v3, c.v4))
 	end
 end
 
