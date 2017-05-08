@@ -2,6 +2,8 @@ if not import then import = require end
 
 local File = import('file')
 
+local ROW_SOLDIER_COUNT = 6 -- 一排最多站多少小兵
+
 local UNITS_MAP = {
 	['铁兵'] = '铁骑',
 	['盾兵'] = '盾甲',
@@ -16,6 +18,7 @@ local UNITS_MAP = {
 	['炼英'] = '炼金英雄',
 	['法英'] = '法师英雄',
 	['刺英'] = '刺客英雄',
+	['修英'] = '修罗虎卫',
 
 	['[B]铁英'] = '[B]铁骑英雄',
 	['[B]盾英'] = '[B]盾甲英雄',
@@ -23,11 +26,14 @@ local UNITS_MAP = {
 	['[B]炼英'] = '[B]炼金英雄',
 	['[B]法英'] = '[B]法师英雄',
 	['[B]刺英'] = '[B]刺客英雄',
+	['[B]修英'] = '[B]修罗虎卫',
 
 	['教徒'] = '教徒',
 }
 
 local UNITS_ORDER_MAP = {
+	'修英',
+	'[B]修英',
 	'铁英',
 	'[B]铁英',
 	'特铁英',
@@ -64,7 +70,7 @@ for i, name in ipairs(UNITS_ORDER_MAP) do
 end
 
 function is_hero_by_name(name)
-	return string.find(name, '英雄')
+	return string.find(name, '英雄') or string.find(name, '修罗虎卫')
 end
 
 function get_unit_name(short_name, is_boss, troop_type)
@@ -85,7 +91,7 @@ local function get_unit_order(short_name)
 end
 
 function parse_group_name(name)
-	local troop_type, difficulty, units_type = string.match(name, '([^-]+)-([^-]+)-([^-]+)')
+	local troop_type, difficulty, units_type = string.match(name, '([^-]+)-([^-]+)-([^-%d]+)')
 	-- 注意: 队伍中武将要么全是[B],要么全不是,所以此处可以用第一武将的[B]前缀来判断队伍是否为boss类型队伍
 	local is_boss = string.sub(units_type, 1, 3) == '[B]'
 	local units = {}
@@ -115,7 +121,7 @@ local function is_melee_by_name(name)
 end
 
 local function is_in_front_row_by_name(name)
-    local front_names = {'铁骑', '盾甲', '教徒'}
+    local front_names = {'铁骑', '盾甲', '教徒', '修罗虎卫'}
     for _, fname in ipairs(front_names) do
 		if string.find(name, fname) then
 			return true
@@ -158,8 +164,245 @@ local function range(from, to)
 	return r
 end
 
+local function is_ok_hero_units(units)
+	if #units == 0  then return true end
+
+	local front_heroes = {}
+	local back_heroes = {}	
+	local unit_counts = {}
+	for _, u in ipairs(units) do
+		if is_hero_by_name(u) then							
+			if is_in_front_row_by_name(u) then
+				table.insert(front_heroes, u)
+			else
+				table.insert(back_heroes, u)
+			end		
+		end
+
+		if not unit_counts[u] then
+			unit_counts[u] = 1
+		else			
+			unit_counts[u] = unit_counts[u] + 1
+		end
+	end
+
+	-- 判断在同一排的武将是否满足条件
+	local function is_the_same_row_2_heroes_ok(hero1, hero2)
+		local member1 = get_member_by_name(hero1)
+		local member2 = get_member_by_name(hero2)
+		if member1 == member2 then
+			-- 两个相同的武将,小兵数量必定为双数
+			local member_count = unit_counts[member1]			
+			if member_count and member_count % 2 ~= 0 then
+				return false
+			else
+				return true
+			end
+		else
+			-- 不同的武将,带的小兵数量一样
+			local member1_count = unit_counts[member1]
+			local member2_count = unit_counts[member2]			
+			return member1_count == member2_count
+		end
+	end
+
+	if #front_heroes > 0 then
+		if #front_heroes == 1 then
+			-- 前排只有一个武将,那么小兵数量要么不存在,要么是双数
+			local member = get_member_by_name(front_heroes[1])
+			local member_count = unit_counts[member]
+			if member_count == 1 or member_count == 3 then
+				return false
+			end
+		elseif #front_heroes == 2 then
+			if not is_the_same_row_2_heroes_ok(front_heroes[1], front_heroes[2]) then
+				return false
+			end
+		else
+			assert(false)
+		end
+	end
+
+	if #back_heroes > 0 then
+		if #back_heroes == 1 then
+			-- 后排只有一个武将那么必须带双数小兵
+			local member = get_member_by_name(back_heroes[1])
+			local member_count = unit_counts[member]		
+			if member_count == 1 or member_count == 3 then
+				return false
+			end
+		elseif #back_heroes == 2 then
+			if not is_the_same_row_2_heroes_ok(back_heroes[1], back_heroes[2]) then
+				return false
+			end
+		else
+			assert(false)
+		end	
+	end
+
+	return true
+end
+
+local function is_ok_soldier_units(units)
+	if #units == 0 then return true end
+
+	-- 先记录数据
+	local front_soldiers = {}
+	local back_soldiers = {}
+	local unit_counts = {}
+	local unit_types = {}
+	local front_type_count = 0
+	local back_type_count = 0
+	for _, u in ipairs(units) do
+		if not is_hero_by_name(u) then							
+			if is_in_front_row_by_name(u) then
+				table.insert(front_soldiers, u)				
+			else
+				table.insert(back_soldiers, u)
+			end
+		end
+
+		if not unit_counts[u] then
+			table.insert(unit_types, u)
+			if is_in_front_row_by_name(u) then
+				front_type_count = front_type_count + 1
+			else
+				back_type_count = back_type_count + 1
+			end
+			unit_counts[u] = 1
+		else			
+			unit_counts[u] = unit_counts[u] + 1
+		end
+
+	end	
+
+	if #unit_types == 1 then
+		-- 同种小兵是,任何数量都可以
+	elseif #unit_types == 2 then
+		-- 同排小兵
+		if #front_soldiers == 0 or #back_soldiers == 0 then
+			local c1 = unit_counts[unit_types[1]]
+			local c2 = unit_counts[unit_types[2]]
+			if c1 > ROW_SOLDIER_COUNT and c2 >ROW_SOLDIER_COUNT then				
+				return false
+			end
+		else
+			if #front_soldiers > ROW_SOLDIER_COUNT then
+				-- 前排小兵顶多站一排
+				return false
+			end
+		end
+	elseif #unit_types == 3 then		
+		if front_type_count == 1 then
+			-- 只有最后一排能够排多个小兵
+			local full_row_count = 0
+			for unit, count in pairs(unit_counts) do
+				if count > ROW_SOLDIER_COUNT then
+					full_row_count = full_row_count + 1
+				end
+			end
+			if full_row_count >= 2 then
+				return false
+			else
+				-- 保证前排单位只有一排
+				if #front_soldiers > ROW_SOLDIER_COUNT then
+					return false
+				end
+			end
+		elseif front_type_count == 2 then
+			-- 只有最后一排能够排多个小兵
+			local full_row_count = 0
+			for unit, count in pairs(unit_counts) do
+				if count > ROW_SOLDIER_COUNT then
+					full_row_count = full_row_count + 1
+				end
+			end			
+			if full_row_count >= 2 then
+				return false
+			else
+				if #back_soldiers <= ROW_SOLDIER_COUNT then
+					if full_row_count >= 1 then
+						return false
+					end
+				else
+					if full_row_count >= 2 then
+						return false
+					end
+				end
+			end
+		else
+			assert(false, string.format('非法的怪物组合: %s', table.concat(units, ',')))
+		end			
+	else
+		assert(false, string.format('非法的怪物组合: %s', table.concat(units, ',')))
+	end
+
+	return true
+end
+
+-- 该接口用于过滤不符合条件的组合
+function is_ok_units(units)	
+	if #units > 24 then return false end
+
+	-- 如果单位中存在值为nil的,也过滤掉(这个有可能是因为加入了修罗虎卫(没有member))
+	for i, u in ipairs(units) do
+		if not u then
+			return false
+		end
+	end
+	
+	local hero_units = {}
+	local soldier_units = {}
+	local front_hero_count, back_hero_count = 0, 0
+	for _, u in ipairs(units) do
+		if is_hero_by_name(u) then
+			table.insert(hero_units, u)
+			if is_in_front_row_by_name(u) then
+				front_hero_count = front_hero_count + 1
+			else
+				back_hero_count = back_hero_count + 1
+			end
+		else
+			table.insert(soldier_units, u)
+		end
+	end
+
+	local function pop(unit)
+		for i, u in ipairs(soldier_units) do
+			if u == unit then
+				return table.remove(soldier_units, i)
+			end
+		end
+	end
+
+	for i = 1, #hero_units do
+		local hero = hero_units[i]
+		local max_member_count
+		if is_in_front_row_by_name(hero) then
+			max_member_count = front_hero_count == 1 and 4 or 3
+		else
+			max_member_count = back_hero_count == 1 and 4 or 3
+		end
+
+		local member = get_member_by_name(hero)
+		for j = 1, max_member_count do
+			local m = pop(member)
+			if m then
+				table.insert(hero_units, m)
+			else
+				break
+			end
+		end
+	end
+
+	return is_ok_hero_units(hero_units) and is_ok_soldier_units(soldier_units)
+end
+
 local function add_group(groups, formation, ...)
-	table.insert(groups, {formation = formation, units = U3(...)})
+	local units = U3(...)
+	if is_ok_units(units) then
+		table.insert(groups, {formation = formation, units = units})
+	end
 end
 
 local function gen_groups_1_h(hero, difficulty, is_boss)
@@ -221,7 +464,7 @@ local function gen_groups_2_hh_x_x(h1, h2, difficulty, is_boss)
 		s1_counts = range(0, 3)
 		s2_counts = range(0, 8)
 	elseif difficulty == '超难' then
-		s1_counts = {3}
+		s1_counts = range(1, 3)
 		s2_counts = range(2, 16)
 	else
 		error(string.format('[%s, %s] 不支持难度 [%s]', h1, h2, difficulty))
@@ -452,7 +695,7 @@ local function gen_groups_2_ss(s1, s2, difficulty, is_boss)
 	elseif is_front_s1 and not is_front2 then
 		return gen_groups_2_ss_1_2(s1, s2, difficulty, is_boss)
 	else
-		error('不支持的2单位配置: ' .. table.concat(s1, s2, ', '))
+		error('不支持的2单位配置: ' .. table.concat({s1, s2}, ', '))
 	end
 end
 
@@ -518,7 +761,7 @@ local function gen_groups_3_hhh_1_1_2(h1, h2, h3, difficulty, is_boss)
 		s3_counts = range(0, 12)
 	elseif difficulty == '超难' or difficulty == '变态' then
 		s12_counts = range(0, 4)
-		s3_counts = range(2, 12)
+		s3_counts = range(0, 12)
 	else
 		error(string.format('[%s, %s, %s] 不支持难度 [%s]', h1, h2, h3, difficulty))
 	end
@@ -818,6 +1061,16 @@ function groups_normal_to_special(group, origin_name)
 	return group
 end
 
+local function get_units_by_row(r)
+	local units = {}
+	for i = 1, 24 do
+		if r['Monster' .. i] then
+			table.insert(units, r['Monster' .. i])
+		end
+	end
+	return units
+end
+
 function get_gen_group_names(input_path, output_path)
 	local input_t = File.read_table(input_path)
 	local output_t = File.read_table(output_path)
@@ -832,12 +1085,30 @@ function get_gen_group_names(input_path, output_path)
 	for i = 1, input_t.row_count do
 		local ri = input_t.rows[tostring(i)]
 		local ro = output_by_names[ri.GroupName]		
-		if not ri.IgnoreGen and ((not ro) or ro.VersionID ~= ri.VersionID) then			
-			table.insert(names, ri.GroupName)
+		if not ri.IgnoreGen then
+			if ro then
+				local units = get_units_by_row(ro)
+				if ro.VersionID ~= ri.VersionID or not is_ok_units(units) then
+					table.insert(names, ri.GroupName)
+				end	
+			else
+				table.insert(names, ri.GroupName)
+			end
 		end
 	end
 
 	return names
+end
+
+function add_row_to_output_table(t, name)
+	local row = {}	
+	row.GroupName = name
+
+	local row_count = t.row_count + 1
+	t.row_count = row_count
+	t.rows[tostring(row_count)] = row
+
+	return row
 end
 
 function update_group_output(results, input_path, output_path)
@@ -856,18 +1127,54 @@ function update_group_output(results, input_path, output_path)
 		output_by_names[r.GroupName] = r
 	end
 
+	-- 将input中的自定义项更新到output中
+	for name, ri in pairs(input_by_names) do
+		if ri.IgnoreGen then
+			local ro = output_by_names[name]
+			if not ro then
+				ro = add_row_to_output_table(output_t, name)
+			end
+
+			ro.VersionID = ri.VersionID
+			ro.Formation = ri.Formation
+			for i = 1, 24 do
+				ro['Monster' .. i] = ri['Monster' .. i]				
+			end
+		else
+			local ro = output_by_names[name]
+			if ro then
+				ro.Formation = ri.Formation
+			end
+		end
+	end
+
+	-- 去除output中的多余项, 只能从后往前遍历
+	for i = output_t.row_count, 1, -1  do
+		local ro = output_t.rows[tostring(i)]
+		local ri = input_by_names[ro.GroupName]
+		if not ri then
+			-- 去除多余项
+			output_t.row_count = output_t.row_count - 1
+			for j = i, output_t.row_count do
+				output_t.rows[tostring(j)] = output_t.rows[tostring(j + 1)]
+			end
+			output_t.rows[tostring(output_t.row_count + 1)] = nil
+		end
+	end
+
+	-- 写入result结果
 	for _, r in ipairs(results) do
 		local name, units = r.name, r.units
 		local ri = input_by_names[name]
 		local ro = output_by_names[name]
-		ro.VersionID = ri.VersionID
-
-		for monster_id = 1, 24 do
-			ro['Monster' .. monster_id] = nil
+		if not ro then
+			ro = add_row_to_output_table(output_t, name)
 		end
 
-		for i, u in ipairs(units) do
-			ro['Monster' .. i] = u
+		ro.Formation = ri.Formation
+		ro.VersionID = ri.VersionID
+		for i = 1, 24 do
+			ro['Monster' .. i] = units[i]
 		end
 	end
 

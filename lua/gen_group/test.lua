@@ -1,12 +1,18 @@
+io.stdout:setvbuf('no')
+
 require 'common'
 
 local test = {}
 
 function test_all()
+	print('============Test Start===============')
+
 	for k,v in pairs(test) do
 		print('test ' .. k)
 		v()
 	end
+
+	print('============Test Finish==============')
 end
 
 function test.parse_group_name()
@@ -27,7 +33,9 @@ end
 
 function test.get_unit_name()
 	assert(get_unit_name('铁英', false, '黄巾') == '黄巾铁骑英雄')
+	assert(get_unit_name('修英', false, '黄巾') == '黄巾修罗虎卫')
 	assert(get_unit_name('铁英', true, '三国') == '[B]铁骑英雄')
+	assert(get_unit_name('修英', true, '三国') == '[B]修罗虎卫')
 end
 
 function test.is_hero_by_name()
@@ -53,16 +61,16 @@ function test.gen_groups()
 	local function gen(name)
 		local cfg = parse_group_name(name)
 		local groups = gen_groups(cfg)
-		for i, group in ipairs(groups) do
-			print(group.formation, table.concat(group.units, ','))
-		end
+		assert(#groups > 0, name)		
 	end
 
 	-- 1h
 	gen('三国-简单-铁英')
-	gen('黄巾-普通-教徒')
+	gen('三国-普通-铁英')
+	gen('三国-普通-修英')
 
 	-- 1s
+	gen('黄巾-普通-教徒')	
 	gen('三国-简单-铁兵')
 	gen('三国-普通-铁兵')
 	
@@ -75,6 +83,7 @@ function test.gen_groups()
 	gen('三国-普通-铁英+强英')
 	gen('三国-困难-铁英+强英')
 	gen('三国-超难-铁英+强英')
+	gen('三国-超难-修英+强英')
 
 	-- 2_hs_xx
 	gen('三国-普通-铁英+盾兵')
@@ -85,6 +94,7 @@ function test.gen_groups()
 	gen('三国-普通-铁英+强兵')
 	gen('三国-困难-铁英+强兵')
 	gen('三国-超难-铁英+强兵')
+	gen('三国-超难-修英+强兵')
 
 	-- 2_hs_21
 	gen('三国-普通-强英+铁兵')
@@ -94,7 +104,6 @@ function test.gen_groups()
 	-- 2_ss_xx
 	gen('三国-普通-铁兵+盾兵')
 	gen('三国-困难-铁兵+盾兵')
-	gen('三国-超难-铁兵+盾兵')
 
 	-- 2_ss_12
 	gen('三国-普通-铁兵+强兵')
@@ -104,6 +113,7 @@ function test.gen_groups()
 	-- 3_hhh_122	
 	gen('三国-超难-铁英+强英+法英')
 	gen('三国-变态-铁英+强英+法英')
+	gen('三国-变态-修英+强英+法英')
 
 	-- 3_hhh_112
 	gen('三国-超难-铁英+盾英+法英')
@@ -118,11 +128,13 @@ function test.gen_groups()
 	gen('三国-困难-铁英+强英+法兵')
 	gen('三国-超难-铁英+强英+法兵')
 	gen('三国-变态-铁英+强英+法兵')
+	gen('三国-变态-修英+强英+法兵')
 
 	-- 3_hhs_221
 	gen('三国-困难-铁英+法英+强兵')
 	gen('三国-超难-铁英+法英+强兵')
 	gen('三国-变态-铁英+法英+强兵')
+	gen('三国-变态-修英+法英+强兵')
 end
 
 function test.groups_normal_to_special()
@@ -132,30 +144,35 @@ function test.groups_normal_to_special()
 	}
 
 	groups_normal_to_special(group, '三国-普通-特强英+特法英')
-	print(table.concat(group.units, ', '))
+
+	-- 特殊强弓英雄, 强弓, 强弓, 特殊法师英雄, 法师, 法师
+	assert(group.units[1] == '特殊强弓英雄')
+	assert(group.units[4] == '特殊法师英雄')
 end
 
 local GROUP_NAMES = {
-	'三国-超难-[B]刺英+法兵',
-	'三国-超难-[B]盾英+刺英+刺英',
-	'三国-超难-刺英+刺英',
-	'三国-超难-盾英+特强英+法英',
-	'三国-普通-铁兵+法兵+刺兵',
-	'三国-普通-铁兵+炼兵',
-	'三国-普通-铁英+法兵',
-	'三国-普通-[B]铁英+教徒',
+	-- '三国-超难-[B]刺英+法兵',
+	-- '三国-超难-[B]盾英+刺英+刺英',
+	-- '三国-超难-刺英+刺英',
+	-- '三国-超难-盾英+特强英+法英',
+	-- '三国-普通-铁兵+法兵+刺兵',
+	-- '三国-普通-铁兵+炼兵',
+	-- '三国-普通-铁英+法兵',
+	-- '三国-普通-[B]铁英+教徒',
+	'三国-超难-修英+强英',
 }
 
 function test.gen_groups2()
 	local function gen(name)
 		local cfg = parse_group_name(name)		
-		local groups = gen_groups(cfg)		
-		for _, g in ipairs(groups) do
-			for i, v in ipairs(g.units) do
-				io.write(v .. ' ')
-			end
-			io.write('\n')
-		end
+		local groups = gen_groups(cfg)
+		assert(#groups > 0, name)
+		-- for _, g in ipairs(groups) do
+		-- 	for i, v in ipairs(g.units) do
+		-- 		io.write(v .. ' ')
+		-- 	end
+		-- 	io.write('\n')
+		-- end
 	end
 
 	for _, name in ipairs(GROUP_NAMES) do	
@@ -165,7 +182,7 @@ end
 
 function test.get_gen_group_names()
 	local names = get_gen_group_names('group_input.json', 'group_output.json')
-	print(table.concat(names, '\n'))
+	-- print(table.concat(names, '\n'))
 end
 
 function test.update_group_output()	
@@ -176,6 +193,5 @@ function test.update_group_output()
 	update_group_output(results, 'group_input.json', 'group_output.json')
 end
 
--- test.get_gen_group_names()
--- test.update_group_output()
 test_all()
+-- test.gen_groups2()
