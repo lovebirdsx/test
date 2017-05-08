@@ -4,7 +4,7 @@ ip = 0xffffff
 
 // ip = true 这一句是不允许的
 
-function getLength(something: string | number) {
+function getLength1(something: string | number) {
     // return something.length 这一句是不允许的
 }
 
