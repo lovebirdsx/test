@@ -165,4 +165,4 @@ def test_list():
 	for i in range(0, len(a)):
 		print a[i]
 
-test_dict()
+test_for()

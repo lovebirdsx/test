@@ -9,10 +9,10 @@ local function pack(...)
 	return { n = select("#", ...), ... }
 end
 
-local M = {}
+local FlowModule = {}
 
-function M.create()
-	local I = {}
+function FlowModule.create()
+	local Flow = {}
 	local instances = {}
 	local time = 0
 
@@ -27,11 +27,11 @@ function M.create()
 		return instances[co]
 	end
 
-	function I.start(fn)
+	function Flow.start(fn)
 		return create_or_get(coroutine.create(fn))
 	end
 
-	function I.wait(seconds)
+	function Flow.wait(seconds)
 		local instance = create_or_get(coroutine.running())
 		local now = time
 		instance.state = WAITING
@@ -41,14 +41,14 @@ function M.create()
 		return coroutine.yield()
 	end
 
-	function I.wait_condition(fn)
+	function Flow.wait_condition(fn)
 		local instance = create_or_get(coroutine.running())
 		instance.state = WAITING
 		instance.condition = fn
 		return coroutine.yield()
 	end
 
-	function I.wait_any_message()
+	function Flow.wait_any_message()
 		local instance = create_or_get(coroutine.running())
 		instance.state = WAITING
 		instance.on_message = function(message_id, message, sender)
@@ -58,7 +58,7 @@ function M.create()
 		return coroutine.yield()
 	end
 
-	function I.wait_message(...)
+	function Flow.wait_message(...)
 		local message_ids_to_wait_for = { ... }
 		local instance = create_or_get(coroutine.running())
 		instance.state = WAITING
@@ -74,7 +74,7 @@ function M.create()
 		return coroutine.yield()
 	end
 
-	function I.load(collection_url)
+	function Flow.load(collection_url)
 		local instance = create_or_get(coroutine.running())
 		instance.state = WAITING
 		instance.on_message = function(message_id, message, sender)
@@ -87,7 +87,7 @@ function M.create()
 		return coroutine.yield()
 	end
 
-	function I.unload(collection_url)
+	function Flow.unload(collection_url)
 		local instance = create_or_get(coroutine.running())
 		instance.state = WAITING
 		instance.on_message = function(message_id, message, sender)
@@ -99,7 +99,7 @@ function M.create()
 		return coroutine.yield()
 	end
 
-	function I.update(dt)
+	function Flow.update(dt)
 		time = time + dt
 
 		for co,instance in pairs(instances) do
@@ -123,7 +123,7 @@ function M.create()
 		end
 	end
 
-	function I.on_message(message_id, message, sender)
+	function Flow.on_message(message_id, message, sender)
 		if message_id == MSG_RESUME then
 			for co,instance in pairs(instances) do
 				if instance.url == message.url then
@@ -143,7 +143,7 @@ function M.create()
 		end
 	end
 
-	return I
+	return Flow
 end
 
-return M
+return FlowModule

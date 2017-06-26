@@ -12,3 +12,7 @@ print('234' > '123')
 print('123' == '123')
 
 -- print(s2)
+
+print(string.find('牢笼_小', '牢笼'))
+print(string.find('牢笼_中', '牢笼'))
+print(string.find('牢笼_大', '牢笼'))

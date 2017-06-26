@@ -1,3 +1,5 @@
+FUCK_FOU = 2
+
 function test_map()
 	local cfg_map = {
     	['狂战'] = {'bh', 'bs1', 'bs2', 'bs3'},
@@ -439,4 +441,19 @@ function test_array()
     end
 end
 
-test_array()
+function test_params()
+    local function foo(...)
+        print(select('#', ...))
+        for i = 1, select('#', ...) do
+            print(select(i, ...))
+        end
+    end
+
+    foo(1,2,3,{1,2,3})
+end
+
+local function bar(a, b, c, d)
+    
+end
+
+test_params()
