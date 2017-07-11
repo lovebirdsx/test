@@ -1,4 +1,4 @@
-local M = {}
+local game = {}
 local objs = {}
 local objs_by_url = {}
 local running = true
@@ -7,23 +7,33 @@ local msgs = {}
 local curr_obj = nil
 local time = 0
 
+local function printf(fmt, ...)
+	local prefix = string.format('%5d ', math.floor(time * 1000))
+	print(string.format(prefix .. fmt, ...))
+end
+
 local function pack(...)
 	return {n = select('#', ...), ...}
 end
 
-function M.update(dt)
-	if #add_record > 0 then
-		for _, obj in ipairs(add_record) do
-			table.insert(objs, obj)
-		end
-		add_record = {}
+local function obj_call(obj, fun_name, ...)
+	curr_obj = obj
+	local fun = obj[fun_name]
+	if fun then fun(...) end
+end
+
+function game.update(dt)
+	while #add_record > 0 do
+		local obj = table.remove(add_record, 1)
+		table.insert(objs, obj)
+
+		objs_by_url[obj.url()] = obj
+
+		obj_call(obj, 'init')
 	end
 
 	for _, obj in ipairs(objs) do
-		curr_obj = obj
-		if obj.update then
-			obj.update(dt)
-		end
+		obj_call(obj, 'update', dt)
 	end
 
 	while #msgs > 0 do
@@ -32,48 +42,45 @@ function M.update(dt)
 		local obj = objs_by_url[recver]
 		if obj then
 			assert(obj.on_message, ('no on_message to obj %s msg:[%s] from:[%s]'):format(recver, message_id, sender))
-			obj.on_message(message_id, message, sender)
+			-- printf('MSG [%16s] -> [%16s] %s', sender, recver, message_id)
+
+			obj_call(obj, 'on_message', message_id, message, sender)
 		else
-			print(('ignore msg: %s to %s'):format(message_id, recver))
+			printf('ignore msg: %s to %s', message_id, recver)
 		end
 	end
 end
 
-function M.add_obj(obj)
+function game.add_obj(obj)
 	table.insert(add_record, obj)
 	assert(not objs_by_url[obj.url()])
-	objs_by_url[obj.url()] = obj
-
-	curr_obj = obj
-	if obj.init then
-		obj.init()
-	end
 end
 
-function M.run(update_times)
+function game.run(update_times)
 	local count = 1
+	local dt = 1 / 30
+
 	while running and (not update_times or count < update_times) do
 		count = count + 1
-		local dt = 1 / 30
-		M.update(dt)
+		game.update(dt)
 		time = time + dt
 	end
 end
 
-function M.exit()
+function game.exit()
 	running = false
 end
 
-function M.post_msg(url, message_id, message)
+function game.post_msg(url, message_id, message)
 	table.insert(msgs, pack(url, message_id, message, curr_obj.url()))
 end
 
-function M.get_url()
+function game.get_url()
 	return curr_obj.url()
 end
 
-function M.time()
+function game.time()
 	return time
 end
 
-return M
+return game

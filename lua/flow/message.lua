@@ -13,3 +13,5 @@ end
 function hash(str)
 	return str
 end
+
+return msg

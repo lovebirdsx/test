@@ -9,9 +9,8 @@ local function foo()
 end
 
 function main()
-	for i = 1, 4 do
-		foo()
-	end
+	local _, count = string.gsub('123\n123\n', '\n', '\n')
+	print(count + 1)
 end
 
 main()
