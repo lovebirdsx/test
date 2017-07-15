@@ -12,6 +12,7 @@ end
 local Flow = {}
 local instances = {}
 local time = 0
+local id = 1
 
 local function create_or_get(co)
 	if not instances[co] then
@@ -19,7 +20,9 @@ local function create_or_get(co)
 			url = msg.url(),
 			state = READY,
 			co = co,
+            id = id
 		}
+        id = id + 1
 	end
 	return instances[co]
 end
@@ -116,7 +119,7 @@ function Flow.update(dt)
 
 			if instance.state == READY then
 				instance.state = RESUMING
-				msg.post(instance.url, MSG_RESUME, { url = instance.url, co = instance.co })
+				msg.post(instance.url, MSG_RESUME, { id = instance.id })
 			end
 		end
 	end
@@ -125,7 +128,7 @@ end
 function Flow.on_message(message_id, message, sender)
 	if message_id == MSG_RESUME then
 		for co, instance in pairs(instances) do
-			if instance.url == message.url and co == instance.co then
+			if instance.id == message.id then
 				instance.state = RUNNING
 				local result = instance.result or {}
 				instance.result = nil

@@ -1,6 +1,11 @@
-function sayHello(person: string) {
-    return 'Hello, ' + person
+function sayHello() {
+    let str = 'Hello->World'
+    let str2 = 'Hello World'
+    console.log(str)
+    console.log(str.indexOf('->'))
+    console.log(str2.indexOf('->'))
 }
 
-let user = 'Lovebird'
-console.log(sayHello(user))
+sayHello()
+
+
