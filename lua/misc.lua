@@ -1,16 +1,7 @@
-require 'table'
+print('hello world')
 
-local function foo()
-	local function bar()
-		
-	end
-
-	print(bar)
+local function foo(a, b)
+	return a + b
 end
 
-function main()
-	local _, count = string.gsub('123\n123\n', '\n', '\n')
-	print(count + 1)
-end
-
-main()
+print(foo(1,2))

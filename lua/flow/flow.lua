@@ -27,8 +27,9 @@ local function create_or_get(co)
 	return instances[co]
 end
 
-function Flow.start(fn)
-	return create_or_get(coroutine.create(fn))
+function Flow.start(fn, ...)
+	local instance = create_or_get(coroutine.create(fn))
+	coroutine.resume(instance.co, ...)
 end
 
 function Flow.wait(seconds)
@@ -48,17 +49,19 @@ function Flow.wait_condition(fn)
 	return coroutine.yield()
 end
 
+-- 返回message, message_id, sender
 function Flow.wait_any_message()
 	local instance = create_or_get(coroutine.running())
 	instance.state = WAITING
 	instance.on_message = function(message_id, message, sender)
 		assert(instance.state == WAITING)
 		instance.state = RUNNING
-		coroutine.resume(instance.co, message_id, message, sender)
+		coroutine.resume(instance.co, message, message_id, sender)
 	end
 	return coroutine.yield()
 end
 
+-- 返回message, message_id, sender
 function Flow.wait_message(...)
 	local message_ids_to_wait_for = { ... }
 	local instance = create_or_get(coroutine.running())
@@ -68,7 +71,7 @@ function Flow.wait_message(...)
 			if message_id == message_id_to_wait_for then
 				assert(instance.state == WAITING)
 				instance.state = RUNNING
-				coroutine.resume(instance.co, message_id, message, sender)
+				coroutine.resume(instance.co, message, message_id, sender)
 				break
 			end
 		end
