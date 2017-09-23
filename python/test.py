@@ -84,7 +84,15 @@ def test_conditon_expression():
 	print('hello' if 0 else 'world')
 
 def test_string_format():
-	str = '%s %s %d' % ('hello', 'wolrd', 123)
+	cnstr = u'本机'
+	str = '%s %s %d' % ('hello', cnstr.encode('utf-8'), 123)
+	str = '%s %s %d' % ('hello', '本机', 123)
+
+	cmd_fmt_str = ("lr.exe --auto-run 1 --battle_rate %d --input input\\%s.lua --output %s"
+                   " --designd %s"
+                   " --prog-args-start no_set_battle_speed=1"
+                  )
+	str = cmd_fmt_str % (1, u'test', 'test', '本机')
 	print(str)
 
 def test_exception():
