@@ -173,4 +173,15 @@ def test_list():
 	for i in range(0, len(a)):
 		print a[i]
 
-test_for()
+def test_sort():
+	l = [
+		{'id': 3, 'name': 'foo'}, 
+		{'id': 1, 'name': 'bar'}, 
+		{'id': 4, 'name': 'car'}, 
+		{'id': 2, 'name': 'fuc'}, 
+	]
+
+	l.sort(lambda a, b: cmp(a['id'], b['id']))
+	print l
+
+test_sort()
