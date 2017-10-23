@@ -16,3 +16,6 @@ print('123' == '123')
 print(string.find('牢笼_小', '牢笼'))
 print(string.find('牢笼_中', '牢笼'))
 print(string.find('牢笼_大', '牢笼'))
+
+print(string.gsub('我<color=red>黄盖的技能可以让全队恢复大量生命！！</color>', '<color=(%w+)>', '<color=Dblue>'))
+print(string.gsub('我<color=red>黄盖</color>的技能可以让全队恢复<color=red>大量</color>生命！！', '<color=(%w+)>', '<color=Dblue>'))
