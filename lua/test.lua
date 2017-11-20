@@ -456,4 +456,15 @@ local function bar(a, b, c, d)
     
 end
 
-test_params()
+-- test_params()
+print(string.format("%s ~= %s", 1, 2))
+local function foo()
+    return 'hello', 'world'
+end
+
+local function bar()
+    return foo()
+end
+
+local a, b = bar()
+print(a, b)
