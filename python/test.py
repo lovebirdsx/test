@@ -184,4 +184,5 @@ def test_sort():
 	l.sort(lambda a, b: cmp(a['id'], b['id']))
 	print l
 
-test_sort()
+# test_sort()
+print 'hello world'.find('hello1')

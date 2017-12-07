@@ -90,3 +90,7 @@ local s = '孙尚香,皇甫嵩,蔡文姬'
 for name in string.gmatch(s, '([^,]+)') do
     print(string.format('%s', name))
 end
+
+local trace = [[.\lib\play\condition\time_score.lua:78: attempt to call method 'get_time' (a nil value)]]
+print(trace)
+print(string.gsub(trace, '(%.\\)', ''))
