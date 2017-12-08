@@ -2,7 +2,7 @@ local M = require('random')
 
 local R = M.create()
 
-R.seed(os.time())
+R.randomseed(os.time())
 
 for i = 1, 10 do
 	print(R.random())

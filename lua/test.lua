@@ -466,5 +466,11 @@ local function bar()
     return foo()
 end
 
+local function car(s1, s2, s3)
+    print(s1 .. ' ' .. s2 .. ' ' .. s3)
+end
+
 local a, b = bar()
 print(a, b)
+--car(foo(), 'fuck')
+car(foo(), 'fuck1', 'fuck2')
