@@ -1,5 +1,5 @@
-local game = require 'game'
-require 'message'
+local game = require 'flow.game'
+local msg = require 'flow.message'
 
 local function GameObj1()
 	local M = {}

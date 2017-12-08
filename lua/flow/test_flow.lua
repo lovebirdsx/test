@@ -1,89 +1,104 @@
-local msg = require 'message'
-local flow = require 'flow'
-local game = require 'game'
+local msg = require 'flow.message'
+local flow = require 'flow.flow'
+local game = require 'flow.game'
 
 local function printf(fmt, ...)
-	print(string.format(fmt, ...))
+    print(string.format(fmt, ...))
 end
 
-local function create_quiter(active_times)
-	local Quiter = {}
+local function Quiter(active_times)
+    local I = {}
 
-	function Quiter.url()
-		return 'quiter'
-	end
+    function I.url()
+        return 'quiter'
+    end
 
-	function Quiter.init()
-		flow.start(function ()
-			print(flow.wait_message('start_quit'))
-			for i = 1, active_times do
-				print(flow.wait_message('quit'))
-				printf('quiter %d', i)
-			end
-			print('game.exit()')
-			game.exit()
-		end)
-	end
+    function I.init()
+        flow.start(function()
+            print(flow.wait_message('start_quit'))
+            for i = 1, active_times do
+                print(flow.wait_message('quit'))
+                printf('quiter %d', i)
+            end
+            print('game.exit()')
+            game.exit()
+        end)
+    end
 
-	function Quiter.on_message(message_id, message, sender)
-		flow.on_message(message_id, message, sender)
-	end
+    function I.on_message(message_id, message, sender)
+        flow.on_message(message_id, message, sender)
+    end
 
-	return Quiter
+    return I
 end
 
-local function create_runner(id, times)
-	local Runner = {}
+local function Runner(id, times)
+    local I = {}
 
-	function Runner.url()
-		return 'runner' .. id
-	end
+    function I.url()
+        return 'runner' .. id
+    end
 
-	function Runner.init()
-		flow.start(function ()
-			for i = 1, times do
-				flow.wait(1)
-			end
+    function I.init()
+        flow.start(function ()
+            print('Runner', id, 'start at', game.time())
+            local message, message_id = flow.wait_message_timeout(1, 'exit_runner')
+            if message_id then
+                print('Runner', id, 'exit by', message_id)
+            else
+                print('Runner', id, 'exit by', 'timeout', game.time())
+            end
+            msg.post('quiter', 'quit')
+        end)
+    end
 
-			msg.post('quiter', 'quit')
-		end)
-	end
+    function I.on_message(message_id, message, sender)
+        print('Runner.on_message', message_id)
+        flow.on_message(message_id, message, sender)
+    end
 
-	function Runner.on_message(message_id, message, sender)
-		flow.on_message(message_id, message, sender)
-	end
-
-	return Runner
+    return I
 end
 
 local function Controller()
-	local M = {}
+    local I = {}
 
-	function M.url()
-		return 'controller'
-	end
+    function I.url()
+        return 'controller'
+    end
 
-	function M.init()
-		flow.start(function ()
-			local active_times = 3
-			game.add_obj(create_quiter(active_times))
-			for i = 1, active_times do
-				game.add_obj(create_runner(i, math.random(1, 10)))
-			end
-			flow.wait(0.1)
-			msg.post('quiter', 'start_quit')
-		end)
-	end
+    function I.init()
+        flow.start(function()
+            local runner_count = 3
+            game.add_obj(Quiter(runner_count))
 
-	function M.update(dt)
-		flow.update(dt)
-	end
+            local runners = {}
+            for i = 1, runner_count do
+                runners[i] = Runner(i, math.random(1, 10))
+                game.add_obj(runners[i])
+            end
 
-	function M.on_message(message_id, message, sender)
-		flow.on_message(message_id, message, sender)
-	end
+            flow.wait(0.1)
+            msg.post('quiter', 'start_quit')
 
-	return M
+            for i = 1, runner_count do
+                flow.start(function ()
+                    flow.wait(math.random(0.5, 1.5))
+                    msg.post(runners[i].url(), 'exit_runner')
+                end)
+            end
+        end)
+    end
+
+    function I.update(dt)
+        flow.update(dt)
+    end
+
+    function I.on_message(message_id, message, sender)
+        flow.on_message(message_id, message, sender)
+    end
+
+    return I
 end
 
 math.randomseed(os.time())
