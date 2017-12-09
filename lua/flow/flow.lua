@@ -67,8 +67,7 @@ function Flow.wait_any_message()
     return coroutine.yield()
 end
 
--- 返回message, message_id, sender
-function Flow.wait_message(...)
+function Flow.wait_condition_or_message(condition, ...)
     local message_ids_to_wait_for = { ... }
     for i, msg_id in ipairs(message_ids_to_wait_for) do
         if type(msg_id) == 'string' then
@@ -78,6 +77,7 @@ function Flow.wait_message(...)
 
     local instance = create_or_get(coroutine.running())
     instance.state = WAITING
+    instance.condition = condition
     instance.on_message = function(message_id, message, sender)
         for _, message_id_to_wait_for in pairs(message_ids_to_wait_for) do
             if message_id == message_id_to_wait_for then
@@ -94,35 +94,15 @@ function Flow.wait_message(...)
     return coroutine.yield()
 end
 
+-- 返回message, message_id, sender
+function Flow.wait_message(...)
+    return Flow.wait_condition_or_message(nil, ...)
+end
+
 -- 返回message, message_id, sender, 如果超时,返回nil
 function Flow.wait_message_timeout(seconds, ...)
-    local message_ids_to_wait_for = { ... }
-    for i, msg_id in ipairs(message_ids_to_wait_for) do
-        if type(msg_id) == 'string' then
-            message_ids_to_wait_for[i] = hash(msg_id)
-        end
-    end
-
-    local instance = create_or_get(coroutine.running())
-    instance.state = WAITING
     local timeout = time + seconds
-    instance.condition = function ()
-        return time >= timeout
-    end
-    instance.on_message = function(message_id, message, sender)
-        for _, message_id_to_wait_for in pairs(message_ids_to_wait_for) do
-            if message_id == message_id_to_wait_for then
-                assert(instance.state == WAITING)
-                instance.state = RUNNING
-                local ok, msg = coroutine.resume(instance.co, message, message_id, sender)
-                if not ok then
-                    print(debug.traceback(instance.co, msg))
-                end
-                break
-            end
-        end
-    end
-    return coroutine.yield()
+    return Flow.wait_condition_or_message(function () return time >= timeout end, ...)
 end
 
 function Flow.load(collection_url)
