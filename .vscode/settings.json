@@ -1,4 +1,5 @@
 {
     "python.linting.pylintEnabled": false,
-    "code-runner.fileDirectoryAsCwd": true
+    "code-runner.fileDirectoryAsCwd": true,
+    "python.pythonPath": "C:\\Users\\ejoy\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
 }

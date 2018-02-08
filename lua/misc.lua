@@ -76,6 +76,7 @@ local p3 = {x = 0.5, y = 0.5}
 
 print(cal_distance(p0, p1, p3))]]
 
+--[[
 local function is_wall_region(name)
     return string.match(name, 'wall%d+') ~= nil
 end
@@ -84,4 +85,16 @@ print(is_wall_region('wall1'))
 print(is_wall_region('wall2'))
 print(is_wall_region('wall11'))
 print(is_wall_region('wall31'))
-print(is_wall_region('wall'))
+print(is_wall_region('wall'))]]
+
+local function foo()
+    return 1, 2, 3, 4
+end
+
+local list = {foo()}
+print(table.concat(list, ','))
+print(list[1])
+print(list[2])
+print(list[3])
+print(list[4])
+print(#list)
