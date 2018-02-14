@@ -23,6 +23,17 @@ biases_L2 = tf.Variable(tf.zeros([1, 1]))
 Wx_plus_b_L2 = tf.matmul(L1, Weights_L2) + biases_L2
 prediction = tf.nn.tanh(Wx_plus_b_L2)
 
+# x             Tensor("Placeholder:0", shape=(?, 1), dtype=float32)
+# y             Tensor("Placeholder_1:0", shape=(?, 1), dtype=float32)
+# Weights_L1    <tf.Variable 'Variable:0' shape=(1, 10) dtype=float32_ref>
+# biases_L1     <tf.Variable 'Variable_1:0' shape=(1, 10) dtype=float32_ref>
+# Wx_plus_b_L1  Tensor("add:0", shape=(?, 10), dtype=float32)
+# L1            Tensor("Tanh:0", shape=(?, 10), dtype=float32)
+# Weights_L2    <tf.Variable 'Variable_2:0' shape=(10, 1) dtype=float32_ref>
+# biases_L2     <tf.Variable 'Variable_3:0' shape=(1, 1) dtype=float32_ref>
+# Wx_plus_b_L2  Tensor("add_1:0", shape=(?, 1), dtype=float32)
+# prediction    Tensor("Tanh_1:0", shape=(?, 1), dtype=float32)
+
 # Loss function
 loss = tf.reduce_mean(tf.square(y - prediction))
 
