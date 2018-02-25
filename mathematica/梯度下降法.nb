@@ -1,0 +1,270 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8351,        262]
+NotebookOptionsPosition[      8011,        247]
+NotebookOutlinePosition[      8397,        264]
+CellTagsIndexPosition[      8354,        261]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\:9884\:6d4b\:51fd\:6570", ":", " ", "\[IndentingNewLine]", 
+   RowBox[{
+    SubscriptBox["h", "\[Theta]"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SubscriptBox["x", 
+         RowBox[{"1", ","}]], 
+        SubscriptBox["x", 
+         RowBox[{"2", ","}]]}], "..."}], ",", 
+      SubscriptBox["x", "n"]}], ")"}]}]}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[CapitalTheta]", "0"], "+", 
+     RowBox[{
+      SubscriptBox["\[CapitalTheta]", "1"], 
+      SubscriptBox["x", "1"]}], "+"}], "..."}], "+", 
+   RowBox[{
+    SubscriptBox["\[CapitalTheta]", "n"], 
+    SubscriptBox["x", "n"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   SubscriptBox["\:82e5x", "0"], "=", 
+   RowBox[{
+    RowBox[{"1", "\[Implies]", 
+     RowBox[{
+      SubscriptBox["h", "\[Theta]"], 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SubscriptBox["x", 
+           RowBox[{"1", ","}]], 
+          SubscriptBox["x", 
+           RowBox[{"2", ","}]]}], "..."}], ",", 
+        SubscriptBox["x", "n"]}], ")"}]}]}], "=", 
+    RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"i", "=", "0"}], "n"], 
+     RowBox[{
+      SubscriptBox["\[Theta]", "i"], 
+      SubscriptBox["x", "i"]}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\:635f\:5931\:51fd\:6570", ":", "\[IndentingNewLine]", 
+   RowBox[{"J", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["\[Theta]", "0"], ",", 
+      SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+      SubscriptBox["\[Theta]", "n"]}], ")"}]}]}], "=", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"2", "m"}]], 
+   RowBox[{
+    OverscriptBox[
+     UnderscriptBox["\[Sum]", 
+      RowBox[{"j", "=", "0"}]], "m"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["h", "\[Theta]"], 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           SubscriptBox["x", "0"], 
+           RowBox[{"(", "j", ")"}]], ",", 
+          SuperscriptBox[
+           SubscriptBox["x", "1"], 
+           RowBox[{"(", "j", ")"}]], ",", "...", ",", 
+          SuperscriptBox[
+           SubscriptBox["x", "n"], 
+           RowBox[{"(", "j", ")"}]]}], ")"}]}], "-", 
+       SubscriptBox["y", "i"]}], ")"}], "2"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{"=", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{"2", "m"}]], 
+    RowBox[{
+     OverscriptBox[
+      UnderscriptBox["\[Sum]", 
+       RowBox[{"j", "=", "0"}]], "m"], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         UnderoverscriptBox["\[Sum]", 
+          RowBox[{"i", "=", "0"}], "n"], 
+         RowBox[{
+          SubscriptBox["\[Theta]", "i"], 
+          SuperscriptBox[
+           SubscriptBox["x", "i"], 
+           RowBox[{"(", "j", ")"}]]}]}], "-", 
+        SubscriptBox["y", "i"]}], ")"}], "2"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"\:5176\:4e2d", ":", " ", "m\:4e3a\:6837\:672c\:6570\:91cf"}], ",",
+    "n\:4e3a\:6a21\:578b\:53c2\:6570\:6570\:91cf"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\:7b97\:6cd5\:8fc7\:7a0b", ":", " ", "\[IndentingNewLine]", "\t", 
+  "\:68af\:5ea6", ":", " ", 
+  RowBox[{
+   FractionBox["\[Delta]", 
+    SubscriptBox["\[Delta]\[Theta]", "i"]], "J", 
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["\[Theta]", "0"], ",", 
+     SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+     SubscriptBox["\[Theta]", "n"]}], ")"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{"\:4e0b\:964d\:8ddd\:79bb", ":", " ", 
+   RowBox[{"\[Alpha]", 
+    FractionBox["\[Delta]", 
+     SubscriptBox["\[Delta]\[Theta]", "i"]], "J", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["\[Theta]", "0"], ",", 
+      SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+      SubscriptBox["\[Theta]", "n"]}], ")"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{"\:7ec8\:6b62\:6761\:4ef6", ":", " ", 
+   RowBox[{"|", 
+    RowBox[{"\[Alpha]", 
+     FractionBox["\[Delta]", 
+      SubscriptBox["\[Delta]\[Theta]", "i"]], "J", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["\[Theta]", "0"], ",", 
+       SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+       SubscriptBox["\[Theta]", "n"]}], ")"}]}], "|", 
+    RowBox[{"<", "\[Epsilon]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"\:66f4\:65b0", ":", " ", 
+    SubscriptBox["\[Theta]", "i"]}], "=", 
+   RowBox[{
+    SubscriptBox["\[Theta]", "i"], "-", 
+    RowBox[{"\[Alpha]", 
+     FractionBox["\[Delta]", 
+      SubscriptBox["\[Delta]\[Theta]", "i"]], "J", 
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["\[Theta]", "0"], ",", 
+       SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+       SubscriptBox["\[Theta]", "n"]}], ")"}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "\:5bf9\:4e8e\:7ebf\:6027\:56de\:5f52", ":", "\[IndentingNewLine]", "\t", 
+   RowBox[{"J", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["\[Theta]", "0"], ",", 
+      SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+      SubscriptBox["\[Theta]", "n"]}], ")"}]}]}], "=", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"2", "m"}]], 
+   RowBox[{
+    OverscriptBox[
+     UnderscriptBox["\[Sum]", 
+      RowBox[{"j", "=", "0"}]], "m"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox["h", "\[Theta]"], 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           SubscriptBox["x", "0"], 
+           RowBox[{"(", "j", ")"}]], ",", 
+          SuperscriptBox[
+           SubscriptBox["x", "1"], 
+           RowBox[{"(", "j", ")"}]], ",", "...", ",", 
+          SuperscriptBox[
+           SubscriptBox["x", "n"], 
+           RowBox[{"(", "j", ")"}]]}], ")"}]}], "-", 
+       SubscriptBox["y", "i"]}], ")"}], "2"]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{
+    FractionBox["\[Delta]", 
+     SubscriptBox["\[Delta]\[Theta]", "i"]], "J", 
+    RowBox[{"(", 
+     RowBox[{
+      SubscriptBox["\[Theta]", "0"], ",", 
+      SubscriptBox["\[Theta]", "1"], ",", "...", ",", 
+      SubscriptBox["\[Theta]", "n"]}], ")"}]}], "=", 
+   RowBox[{
+    FractionBox["1", "m"], 
+    RowBox[{
+     OverscriptBox[
+      UnderscriptBox["\[Sum]", 
+       RowBox[{"j", "=", "0"}]], "m"], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SubscriptBox["h", "\[Theta]"], 
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox[
+            SubscriptBox["x", "0"], 
+            RowBox[{"(", "j", ")"}]], ",", 
+           SuperscriptBox[
+            SubscriptBox["x", "1"], 
+            RowBox[{"(", "j", ")"}]], ",", "...", ",", 
+           SuperscriptBox[
+            SubscriptBox["x", "n"], 
+            RowBox[{"(", "j", ")"}]]}], ")"}]}], "-", 
+        SubscriptBox["y", "i"]}], ")"}], 
+      SuperscriptBox[
+       SubscriptBox["x", "i"], 
+       RowBox[{"(", "j", ")"}]]}]}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.7285475230372367`*^9, 3.728548017517934*^9}, {
+  3.728548050352972*^9, 3.7285480654708157`*^9}, {3.728548110973925*^9, 
+  3.7285481364567275`*^9}, {3.7285481801569786`*^9, 3.7285482063874035`*^9}, {
+  3.728548414820133*^9, 3.7285487658444433`*^9}, {3.728548845114832*^9, 
+  3.728548855737777*^9}, {3.728548886443607*^9, 3.728548896795113*^9}, {
+  3.7285490401940107`*^9, 3.728549076053503*^9}, {3.7285491498521986`*^9, 
+  3.728549154035226*^9}},ExpressionUUID->"7ad378c8-e1da-4133-9ef7-\
+9ccb29c4857d"]
+},
+WindowSize->{991, 1100},
+WindowMargins->{{Automatic, 95}, {Automatic, 7}},
+Magnification:>1.4 Inherited,
+FrontEndVersion->"11.2 for Microsoft Windows (64-bit) (2017\:5e7410\:67082\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 7449, 225, 766, "Input",ExpressionUUID->"7ad378c8-e1da-4133-9ef7-9ccb29c4857d"]
+}
+]
+*)
+
