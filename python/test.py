@@ -26,7 +26,7 @@ def testtime():
 def test_listfile():
 	names = os.listdir('e:/program')
 	for name in names:
-		print name
+		print(name)
 
 def test_file():
 	print(os.path.exists('e:/program/a'))
@@ -101,13 +101,13 @@ def test_exception():
 
 	try:
 		foo()
-	except Exception, e:
+	except Exception as e:
 		print(str(e))
 
 def test_listbox():
 	root = Tk()
 	def printList(event):
-	    print lb.get(lb.curselection())
+	    print(lb.get(lb.curselection()))
 	lb = Listbox(root)
 	lb.bind('<<ListboxSelect>>',printList)
 	for i in range(10):
@@ -169,9 +169,9 @@ def test_default_arg():
 def test_list():
 	a = (1,2,3)
 	for x in a:
-		print x
+		print(x)
 	for i in range(0, len(a)):
-		print a[i]
+		print(a[i])
 
 def test_sort():
 	l = [
@@ -182,7 +182,8 @@ def test_sort():
 	]
 
 	l.sort(lambda a, b: cmp(a['id'], b['id']))
-	print l
+	print(l)
 
 # test_sort()
-print 'hello world'.find('hello1')
+# print 'hello world'.find('hello1')
+print(help(str.startswith))
