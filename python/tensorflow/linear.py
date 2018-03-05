@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 x_train = [1,2,3]
-y_train = [1,2,3]
+y_train = [2,4,6]
 
 W = tf.Variable(tf.random_normal([1]), name='weight')
 b = tf.Variable(tf.random_normal([1]), name='bias')
