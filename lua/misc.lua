@@ -87,14 +87,63 @@ print(is_wall_region('wall11'))
 print(is_wall_region('wall31'))
 print(is_wall_region('wall'))]]
 
-local function foo()
-    return 1, 2, 3, 4
+--print(string.format('%.3f', 0.123456))
+
+local function random()
+    return math.random()
 end
 
-local list = {foo()}
-print(table.concat(list, ','))
-print(list[1])
-print(list[2])
-print(list[3])
-print(list[4])
-print(#list)
+-- 数组求和
+function table.sum(t)
+    local r = 0
+    for _, v in ipairs(t) do
+        r = r + v
+    end
+    return r
+end
+
+local function gen_random_sum_array(n, sum, divide_times)
+    local raw_a = {}
+    for i = 1, n do
+        raw_a[i] = 1 + divide_times * random()
+    end
+
+    local sum_raw_a = table.sum(raw_a)
+
+    local ret_a = {}
+    for i, e in ipairs(raw_a) do
+        ret_a[i] = e / sum_raw_a * sum
+    end
+
+    return ret_a
+end
+
+function table.concat_fmt(t, e_fmt, sep)
+    local st = {}
+    for i, e in ipairs(t) do
+        st[i] = string.format(e_fmt, e)
+    end
+    return table.concat(st, sep)
+end
+
+local function test()
+    local str =
+
+[[
+1 Hello World,
+2 Hello Lovebird
+]]
+
+    print(str)
+end
+
+local function set_task_hit(str)
+    print(str)
+end
+
+local function set_task_hint_mine(...)
+    local str = table.concat({...}, '\n')
+    set_task_hit(str)
+end
+
+set_task_hint_mine('hello', 'world', '1', '2')
