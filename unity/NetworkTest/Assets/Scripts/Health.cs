@@ -1,24 +1,45 @@
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour {
+public class Health : NetworkBehaviour {
     
-    public const int maxHealth = 100;
+    public const int maxHealth = 100; 
+    
+    [SyncVar(hook = "OnChangeHealth")]
     public int currentHealth = maxHealth;
+
     public RectTransform healthBar;
 
     public void TakeDamage(int amount)
     {
+        if (!isServer)
+            return;
+
         if (currentHealth > 0) 
         {
             currentHealth -= amount;
             if (currentHealth <= 0)
             {
-                currentHealth = 0;
+                currentHealth = maxHealth;
+
+                RpcRespawn();
                 Debug.Log("Dead!");
             }
-
-            healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
         }
+    }
+
+    [ClientRpc]
+    void RpcRespawn()
+    {
+        if (isLocalPlayer)
+        {
+            transform.position = Vector3.zero;
+        }
+    }
+
+    void OnChangeHealth(int health)
+    {
+        healthBar.sizeDelta = new Vector2(health, healthBar.sizeDelta.y);
     }
 }
