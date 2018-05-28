@@ -29,7 +29,8 @@ public class ShellExplosion : NetworkBehaviour
             if (!targetRigidbody)
                 continue;
 
-            targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
+            // targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
+
             TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
             if (!targetHealth)
                 continue;
@@ -38,8 +39,8 @@ public class ShellExplosion : NetworkBehaviour
             targetHealth.TakeDamage(damage);
         }
 
+        // Destroy(gameObject);
         RpcDoExplosion(transform.position);
-        Destroy(gameObject);
     }
 
     [ClientRpc]
@@ -48,14 +49,13 @@ public class ShellExplosion : NetworkBehaviour
         Collider[] colliders = Physics.OverlapSphere(position, m_ExplosionRadius, m_TankMask);
         for(int i = 0; i < colliders.Length; i++)
         {
-            Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody>();
-            if (!targetRigidbody)
-                continue;
-
-            targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
-            TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
-            if (!targetHealth)
-                continue;
+            // 针对tank位置的更新在客户端进行比较好
+            TankShooting tank = colliders[i].GetComponent<TankShooting>();
+            if (tank && tank.isLocalPlayer)
+            {
+                Rigidbody targetRigidbody = colliders[i].GetComponent<Rigidbody>();
+                targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
+            }
         }
 
         transform.position = position;

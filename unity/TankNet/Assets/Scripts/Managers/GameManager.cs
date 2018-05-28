@@ -80,6 +80,16 @@ public class GameManager : NetworkBehaviour
         m_CameraControl.m_Targets = targets;
     }
 
+    private void RestartGame()
+    {
+        m_RoundNumber = 0;
+        
+        for (int i = 0; i < m_Tanks.Length; i++)
+        {
+            m_Tanks[i].m_Wins = 0;
+        }
+    }
+
 
     // This is called from start and will run each phase of the game one after another.
     private IEnumerator GameLoop()
@@ -102,23 +112,18 @@ public class GameManager : NetworkBehaviour
         // This code is not run until 'RoundEnding' has finished.  At which point, check if a game winner has been found.
         if (m_GameWinner != null)
         {
-            // If there is a game winner, restart the level.
-            Application.LoadLevel(Application.loadedLevel);
+            // 重新开始游戏
+            RestartGame();
         }
-        else
-        {
-            // If there isn't a winner yet, restart this coroutine so the loop continues.
-            // Note that this coroutine doesn't yield.  This means that the current version of the GameLoop will end.
-            StartCoroutine(GameLoop());
-        }
+
+        // If there isn't a winner yet, restart this coroutine so the loop continues.
+        // Note that this coroutine doesn't yield.  This means that the current version of the GameLoop will end.
+        StartCoroutine(GameLoop());
     }
 
 
     private IEnumerator RoundStarting()
     {
-        if (isServer)
-            RpcResetAllTanksPosition();
-
         // As soon as the round starts reset the tanks and make sure they can't move.        
         ResetAllTanks();
         DisableTankControl();
@@ -259,15 +264,6 @@ public class GameManager : NetworkBehaviour
 
 
     // This function is used to turn all the tanks back on and reset their positions and properties.
-    [ClientRpc]
-    private void RpcResetAllTanksPosition()
-    {
-        for (int i = 0; i < m_Tanks.Length; i++)
-        {
-            m_Tanks[i].ResetPosition();
-        }
-    }
-
     private void ResetAllTanks()
     {
         for (int i = 0; i < m_Tanks.Length; i++)

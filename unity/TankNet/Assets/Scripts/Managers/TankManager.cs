@@ -54,15 +54,11 @@ public class TankManager
         m_CanvasGameObject.SetActive(true);
     }
 
-    public void ResetPosition()
-    {
-        m_Instance.transform.position = m_SpawnPoint.position;
-        m_Instance.transform.rotation = m_SpawnPoint.rotation;
-    }
-
     public void Reset()
     {        
 
+        m_Instance.transform.position = m_SpawnPoint.position;
+        m_Instance.transform.rotation = m_SpawnPoint.rotation;
         m_Instance.SetActive(false);
         m_Instance.SetActive(true);
     }

@@ -3,3 +3,4 @@ Packages
 *.csproj
 *.sln
 obj
+Temp
