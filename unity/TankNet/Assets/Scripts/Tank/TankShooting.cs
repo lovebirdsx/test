@@ -103,7 +103,7 @@ public class TankShooting : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void RpcPlayFireSound()
+    private void RpcFire()
     {
         // Change the clip to the firing clip and play it.
         m_ShootingAudio.clip = m_FireClip;
@@ -122,6 +122,6 @@ public class TankShooting : NetworkBehaviour
 
         NetworkServer.Spawn(shell);
 
-        RpcPlayFireSound();
+        RpcFire();
     }
 }
