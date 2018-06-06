@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee773525ccf90864a86605b166ad6ed7, type: 3}
+  m_Name: Projectile1
+  m_EditorClassIdentifier: 
+  aName: Projectile
+  aSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  aSound: {fileID: 8300000, guid: 6d845eb8254933a4c90a90877bbc223d, type: 3}
+  aBaseCoolDown: 2
+  projectileForce: 500
+  projectile: {fileID: 54967194075073490, guid: 2c4dfc34e064ab04cad2894072d3e65a,
+    type: 2}
