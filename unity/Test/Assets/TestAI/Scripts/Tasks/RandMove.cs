@@ -16,7 +16,6 @@ public class RandMove : Action
 		player = gameObject.GetComponent<Player>();
 
 		Vector3 pos = Random.Range(minDistance, maxDistance) * Random.insideUnitSphere + gameObject.transform.position;
-		Debug.Log(pos);
 		player.Move(pos);
 	}
 
