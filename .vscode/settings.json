@@ -1,6 +1,6 @@
 {
     "python.linting.pylintEnabled": false,
     "code-runner.fileDirectoryAsCwd": true,
-    "python.pythonPath": "C:\\Users\\lovebird\\AppData\\Local\\Programs\\Python\\Python36\\python.exe",
+    "python.pythonPath": "C:\\Users\\ejoy\\AppData\\Local\\Programs\\Python\\Python36\\python.exe",
     "git.ignoreLimitWarning": true
 }
