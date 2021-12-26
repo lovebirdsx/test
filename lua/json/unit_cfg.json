@@ -1,0 +1,766 @@
+
+{
+	"layout": 
+	{
+		"col": 3
+	},
+	"type": "unit",
+	"widget": 
+	[ 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "enemy",
+					"value": "enemy"
+				}, 
+				{
+					"title": "neutral",
+					"value": "neutral"
+				}, 
+				{
+					"title": "ally",
+					"value": "ally"
+				}, 
+				{
+					"title": "enemy2",
+					"value": "enemy2"
+				}, 
+				{
+					"title": "god",
+					"value": "god"
+				}, 
+				{
+					"title": "evil",
+					"value": "evil"
+				}
+			],
+			"key": "camp",
+			"title": "Camp",
+			"type": "choice"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "SkullSoldier",
+					"value": "SkullSoldier"
+				}, 
+				{
+					"title": "SkullSoldierUnderGround",
+					"value": "SkullSoldierUnderGround"
+				}, 
+				{
+					"title": "SkullSoldierAmbush",
+					"value": "SkullSoldierAmbush"
+				}, 
+				{
+					"title": "SkullSoldierAmbush",
+					"value": "SkullSoldierAmbush"
+				}, 
+				{
+					"title": "SkullEliteSoldier",
+					"value": "SkullEliteSoldier"
+				}, 
+				{
+					"title": "SkullEliteSoldierUnderGround",
+					"value": "SkullEliteSoldierUnderGround"
+				}, 
+				{
+					"title": "SkullEliteSoldierAmbush",
+					"value": "SkullEliteSoldierAmbush"
+				}, 
+				{
+					"title": "SkullArcher",
+					"value": "SkullArcher"
+				}, 
+				{
+					"title": "SkullArcherUnderGround",
+					"value": "SkullArcherUnderGround"
+				}, 
+				{
+					"title": "SkullArcherAmbush",
+					"value": "SkullArcherAmbush"
+				}, 
+				{
+					"title": "SkullEliteArcher",
+					"value": "SkullEliteArcher"
+				}, 
+				{
+					"title": "SkullEliteArcherUnderGround",
+					"value": "SkullEliteArcherUnderGround"
+				}, 
+				{
+					"title": "SkullEliteArcherAmbush",
+					"value": "SkullEliteArcherAmbush"
+				}, 
+				{
+					"title": "Goblin",
+					"value": "Goblin"
+				}, 
+				{
+					"title": "Zombie",
+					"value": "Zombie"
+				}, 
+				{
+					"title": "PlagueZombie",
+					"value": "PlagueZombie"
+				}, 
+				{
+					"title": "Gargoyle",
+					"value": "Gargoyle"
+				}, 
+				{
+					"title": "DeathGuard",
+					"value": "DeathGuard"
+				}, 
+				{
+					"title": "Willem",
+					"value": "Willem"
+				}, 
+				{
+					"title": "Tomb",
+					"value": "Tomb"
+				}, 
+				{
+					"title": "Lich",
+					"value": "Lich"
+				}, 
+				{
+					"title": "Pig",
+					"value": "Pig"
+				}, 
+				{
+					"title": "Crow",
+					"value": "Crow"
+				}, 
+				{
+					"title": "Frog",
+					"value": "Frog"
+				}, 
+				{
+					"title": "Bomb",
+					"value": "Bomb"
+				}, 
+				{
+					"title": "Turret",
+					"value": "Turret"
+				}, 
+				{
+					"title": "TurretUndead",
+					"value": "TurretUndead"
+				}, 
+				{
+					"title": "TowerUndead",
+					"value": "TowerUndead"
+				}, 
+				{
+					"title": "Tower",
+					"value": "Tower"
+				}, 
+				{
+					"title": "Fence",
+					"value": "Fence"
+				}, 
+				{
+					"title": "Fence2",
+					"value": "Fence2"
+				}, 
+				{
+					"title": "Barrack",
+					"value": "Barrack"
+				}, 
+				{
+					"title": "Yvette",
+					"value": "Yvette"
+				}, 
+				{
+					"title": "YvetteMember",
+					"value": "YvetteMember"
+				}, 
+				{
+					"title": "Ellick",
+					"value": "Ellick"
+				}, 
+				{
+					"title": "EllickMember",
+					"value": "EllickMember"
+				}, 
+				{
+					"title": "Henry",
+					"value": "Henry"
+				}, 
+				{
+					"title": "HenryMember",
+					"value": "HenryMember"
+				}, 
+				{
+					"title": "Delia",
+					"value": "Delia"
+				}, 
+				{
+					"title": "Delia2",
+					"value": "Delia2"
+				}, 
+				{
+					"title": "DeliaMember",
+					"value": "DeliaMember"
+				}, 
+				{
+					"title": "DeliaMember2",
+					"value": "DeliaMember2"
+				}, 
+				{
+					"title": "Mader",
+					"value": "Mader"
+				}, 
+				{
+					"title": "MaderMember",
+					"value": "MaderMember"
+				}, 
+				{
+					"title": "BerserkerSoldier",
+					"value": "BerserkerSoldier"
+				}, 
+				{
+					"title": "VillagerMale1",
+					"value": "VillagerMale1"
+				}, 
+				{
+					"title": "VillagerMale2",
+					"value": "VillagerMale2"
+				}, 
+				{
+					"title": "VillagerFemale1",
+					"value": "VillagerFemale1"
+				}, 
+				{
+					"title": "Carriag",
+					"value": "Carriag"
+				}, 
+				{
+					"title": "Colossu",
+					"value": "Colossu"
+				}, 
+				{
+					"title": "SkyEy",
+					"value": "SkyEy"
+				}
+			],
+			"key": "type",
+			"title": "Type",
+			"type": "choice"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "hold1",
+					"value": "hold1"
+				}, 
+				{
+					"title": "hold2",
+					"value": "hold2"
+				}, 
+				{
+					"title": "hold3",
+					"value": "hold3"
+				}, 
+				{
+					"title": "hold4",
+					"value": "hold4"
+				}, 
+				{
+					"title": "tower1",
+					"value": "tower1"
+				}, 
+				{
+					"title": "tower2",
+					"value": "tower2"
+				}, 
+				{
+					"title": "tower3",
+					"value": "tower3"
+				}, 
+				{
+					"title": "tower4",
+					"value": "tower4"
+				}, 
+				{
+					"title": "turret1",
+					"value": "turret1"
+				}, 
+				{
+					"title": "turret2",
+					"value": "turret2"
+				}, 
+				{
+					"title": "turret3",
+					"value": "turret3"
+				}, 
+				{
+					"title": "turret4",
+					"value": "turret4"
+				}, 
+				{
+					"title": "barrack1",
+					"value": "barrack1"
+				}, 
+				{
+					"title": "barrack2",
+					"value": "barrack2"
+				}, 
+				{
+					"title": "barrack3",
+					"value": "barrack3"
+				}, 
+				{
+					"title": "barrack4",
+					"value": "barrack4"
+				}, 
+				{
+					"title": "ambush1",
+					"value": "ambush1"
+				}, 
+				{
+					"title": "ambush2",
+					"value": "ambush2"
+				}, 
+				{
+					"title": "ambush3",
+					"value": "ambush3"
+				}, 
+				{
+					"title": "ambush4",
+					"value": "ambush4"
+				}, 
+				{
+					"title": "ally1",
+					"value": "ally1"
+				}, 
+				{
+					"title": "ally2",
+					"value": "ally2"
+				}, 
+				{
+					"title": "ally3",
+					"value": "ally3"
+				}, 
+				{
+					"title": "ally4",
+					"value": "ally4"
+				}, 
+				{
+					"title": "patrol1",
+					"value": "patrol1"
+				}, 
+				{
+					"title": "patrol2",
+					"value": "patrol2"
+				}, 
+				{
+					"title": "patrol3",
+					"value": "patrol3"
+				}, 
+				{
+					"title": "patrol4",
+					"value": "patrol4"
+				}, 
+				{
+					"title": "bomb1",
+					"value": "bomb1"
+				}, 
+				{
+					"title": "bomb2",
+					"value": "bomb2"
+				}, 
+				{
+					"title": "bomb3",
+					"value": "bomb3"
+				}, 
+				{
+					"title": "bomb4",
+					"value": "bomb4"
+				}, 
+				{
+					"title": "bomb5",
+					"value": "bomb5"
+				}, 
+				{
+					"title": "fence",
+					"value": "fence"
+				}
+			],
+			"key": "squad",
+			"title": "Squad",
+			"type": "combo box"
+		}, 
+		{
+			"default": false,
+			"key": "leader",
+			"title": "IsLeader",
+			"type": "check box"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "n",
+					"value": "n"
+				}, 
+				{
+					"title": "ne",
+					"value": "ne"
+				}, 
+				{
+					"title": "e",
+					"value": "e"
+				}, 
+				{
+					"title": "se",
+					"value": "se"
+				}, 
+				{
+					"title": "s",
+					"value": "s"
+				}, 
+				{
+					"title": "sw",
+					"value": "sw"
+				}, 
+				{
+					"title": "w",
+					"value": "w"
+				}, 
+				{
+					"title": "nw",
+					"value": "nw"
+				}
+			],
+			"key": "dir",
+			"title": "Dir",
+			"type": "choice"
+		}, 
+		{
+			"default": false,
+			"key": "god_sight",
+			"title": "GodSight",
+			"type": "check box"
+		}, 
+		{
+			"default": false,
+			"key": "scene_ai",
+			"title": "EnableSceneAI",
+			"type": "check box"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "none",
+					"value": "none"
+				}, 
+				{
+					"title": "easy_patrol",
+					"value": "easy_patrol"
+				}, 
+				{
+					"title": "rougeinearth",
+					"value": "rougeinearth"
+				}, 
+				{
+					"title": "ambush",
+					"value": "ambush"
+				}, 
+				{
+					"title": "move",
+					"value": "move"
+				}, 
+				{
+					"title": "attack_move",
+					"value": "attack_move"
+				}, 
+				{
+					"title": "berserker",
+					"value": "berserker"
+				}, 
+				{
+					"title": "ranger",
+					"value": "ranger"
+				}, 
+				{
+					"title": "alchemist",
+					"value": "alchemist"
+				}, 
+				{
+					"title": "knight",
+					"value": "knight"
+				}, 
+				{
+					"title": "pig",
+					"value": "pig"
+				}, 
+				{
+					"title": "goblin",
+					"value": "goblin"
+				}, 
+				{
+					"title": "in_circle",
+					"value": "in_circle"
+				}, 
+				{
+					"title": "in_circle_attack",
+					"value": "in_circle_attack"
+				}, 
+				{
+					"title": "sale_mader",
+					"value": "sale_mader"
+				}, 
+				{
+					"title": "tomb",
+					"value": "tomb"
+				}
+			],
+			"default": 0,
+			"key": "move_ai",
+			"title": "SceneAI",
+			"type": "choice"
+		}, 
+		{
+			"default": "none",
+			"key": "radius",
+			"title": "Radius",
+			"type": "text"
+		}, 
+		{
+			"default": "none",
+			"key": "radius2",
+			"title": "Radius2",
+			"type": "text"
+		}, 
+		{
+			"default": "none",
+			"key": "time",
+			"title": "Time",
+			"type": "text"
+		}, 
+		{
+			"default": "none",
+			"key": "wait_time",
+			"title": "WaitTime",
+			"type": "text"
+		}, 
+		{
+			"default": false,
+			"key": "patrol_loop",
+			"title": "PatrolLoop",
+			"type": "check box"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "none",
+					"value": "none"
+				}, 
+				{
+					"title": "p1",
+					"value": "p1"
+				}, 
+				{
+					"title": "p2",
+					"value": "p2"
+				}, 
+				{
+					"title": "p3",
+					"value": "p3"
+				}, 
+				{
+					"title": "p4",
+					"value": "p4"
+				}, 
+				{
+					"title": "p5",
+					"value": "p5"
+				}, 
+				{
+					"title": "p6",
+					"value": "p6"
+				}, 
+				{
+					"title": "p7",
+					"value": "p7"
+				}, 
+				{
+					"title": "p8",
+					"value": "p8"
+				}
+			],
+			"default": 0,
+			"key": "pos",
+			"title": "Point",
+			"type": "combo box"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "none",
+					"value": "none"
+				}, 
+				{
+					"title": "path1",
+					"value": "path1"
+				}, 
+				{
+					"title": "path2",
+					"value": "path2"
+				}, 
+				{
+					"title": "path3",
+					"value": "path3"
+				}, 
+				{
+					"title": "path4",
+					"value": "path4"
+				}, 
+				{
+					"title": "path5",
+					"value": "path5"
+				}, 
+				{
+					"title": "path6",
+					"value": "path6"
+				}, 
+				{
+					"title": "path7",
+					"value": "path7"
+				}, 
+				{
+					"title": "path8",
+					"value": "path8"
+				}, 
+				{
+					"title": "patrol1",
+					"value": "patrol1"
+				}, 
+				{
+					"title": "patrol2",
+					"value": "patrol2"
+				}, 
+				{
+					"title": "patrol3",
+					"value": "patrol3"
+				}, 
+				{
+					"title": "patrol4",
+					"value": "patrol4"
+				}
+			],
+			"default": 0,
+			"key": "path",
+			"title": "Path",
+			"type": "combo box"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "none",
+					"value": "none"
+				}, 
+				{
+					"title": "region1",
+					"value": "region1"
+				}, 
+				{
+					"title": "region2",
+					"value": "region2"
+				}, 
+				{
+					"title": "region3",
+					"value": "region3"
+				}, 
+				{
+					"title": "region4",
+					"value": "region4"
+				}, 
+				{
+					"title": "region5",
+					"value": "region5"
+				}, 
+				{
+					"title": "region6",
+					"value": "region6"
+				}, 
+				{
+					"title": "region7",
+					"value": "region7"
+				}, 
+				{
+					"title": "region8",
+					"value": "region8"
+				}
+			],
+			"default": 0,
+			"key": "region",
+			"title": "Region",
+			"type": "combo box"
+		}, 
+		{
+			"default": "none",
+			"key": "units",
+			"title": "GenUnits",
+			"type": "text"
+		}, 
+		{
+			"choices": 
+			[ 
+				{
+					"title": "none",
+					"value": "none"
+				}, 
+				{
+					"title": "enemy",
+					"value": "enemy"
+				}, 
+				{
+					"title": "neutral",
+					"value": "neutral"
+				}, 
+				{
+					"title": "ally",
+					"value": "ally"
+				}, 
+				{
+					"title": "enemy2",
+					"value": "enemy2"
+				}, 
+				{
+					"title": "god",
+					"value": "god"
+				}, 
+				{
+					"title": "evil",
+					"value": "evil"
+				}
+			],
+			"default": 0,
+			"key": "gen_camp",
+			"title": "GenCamp",
+			"type": "combo box"
+		}, 
+		{
+			"default": "none",
+			"key": "first",
+			"title": "First",
+			"type": "text"
+		}, 
+		{
+			"default": "none",
+			"key": "interval",
+			"title": "Interval",
+			"type": "text"
+		}
+	]
+}

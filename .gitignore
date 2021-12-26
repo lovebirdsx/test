@@ -1,0 +1,6 @@
+*.sublime-workspace
+*.pyc
+.idea
+settings.json
+.ipynb_checkpoints
+.vscode

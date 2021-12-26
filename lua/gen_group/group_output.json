@@ -1,0 +1,2143 @@
+
+{
+	"cn_names": 
+	{
+		"1": "怪物组名字",
+		"10": "怪物4",
+		"11": "怪物5",
+		"12": "怪物6",
+		"13": "怪物7",
+		"14": "怪物8",
+		"15": "怪物9",
+		"16": "怪物10",
+		"17": "怪物11",
+		"18": "怪物12",
+		"19": "怪物13",
+		"2": "难度",
+		"20": "怪物14",
+		"21": "怪物15",
+		"22": "怪物16",
+		"23": "怪物17",
+		"24": "怪物18",
+		"25": "怪物19",
+		"26": "怪物20",
+		"27": "怪物21",
+		"28": "怪物22",
+		"29": "怪物23",
+		"3": "忽略生成",
+		"30": "怪物24",
+		"4": "版本号",
+		"5": "类型",
+		"6": "阵型",
+		"7": "怪物1",
+		"8": "怪物2",
+		"9": "怪物3"
+	},
+	"col_count": 30,
+	"keys": 
+	{
+		"1": "GroupName",
+		"10": "Monster4",
+		"11": "Monster5",
+		"12": "Monster6",
+		"13": "Monster7",
+		"14": "Monster8",
+		"15": "Monster9",
+		"16": "Monster10",
+		"17": "Monster11",
+		"18": "Monster12",
+		"19": "Monster13",
+		"2": "Difficulty",
+		"20": "Monster14",
+		"21": "Monster15",
+		"22": "Monster16",
+		"23": "Monster17",
+		"24": "Monster18",
+		"25": "Monster19",
+		"26": "Monster20",
+		"27": "Monster21",
+		"28": "Monster22",
+		"29": "Monster23",
+		"3": "IgnoreGen",
+		"30": "Monster24",
+		"4": "VersionID",
+		"5": "Type",
+		"6": "Formation",
+		"7": "Monster1",
+		"8": "Monster2",
+		"9": "Monster3"
+	},
+	"row_count": 330,
+	"rows": 
+	{
+		"1": 
+		{
+			"Formation": "auto",
+			"GroupName": "测试-逃逸-吕布1",
+			"IgnoreGen": true,
+			"Monster1": "吕布",
+			"Monster2": "铁骑",
+			"Monster3": "铁骑",
+			"Monster4": "铁骑",
+			"VersionID": 1
+		},
+		"10": 
+		{
+			"GroupName": "三国-困难-自爆兵",
+			"IgnoreGen": true,
+			"Monster1": "自爆兵",
+			"Monster2": "自爆兵",
+			"VersionID": 1
+		},
+		"100": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+盾兵+法兵",
+			"VersionID": 1
+		},
+		"101": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾兵+强兵+炼兵",
+			"VersionID": 1
+		},
+		"102": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾兵+强兵+法兵",
+			"VersionID": 1
+		},
+		"103": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾兵+炼兵+法兵",
+			"VersionID": 1
+		},
+		"104": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+强兵+炼兵",
+			"VersionID": 1
+		},
+		"105": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+强兵+法兵",
+			"VersionID": 1
+		},
+		"106": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+炼兵+法兵",
+			"VersionID": 1
+		},
+		"107": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+强兵",
+			"VersionID": 1
+		},
+		"108": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+炼兵",
+			"VersionID": 1
+		},
+		"109": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+法兵",
+			"VersionID": 1
+		},
+		"11": 
+		{
+			"Difficulty": "简单",
+			"Formation": "row8",
+			"GroupName": "黄巾-简单-教徒",
+			"IgnoreGen": true,
+			"Monster1": "黄巾教徒",
+			"Monster2": "黄巾教徒",
+			"Monster3": "黄巾教徒",
+			"Monster4": "黄巾教徒",
+			"Monster5": "黄巾教徒",
+			"Monster6": "黄巾教徒",
+			"Monster7": "黄巾教徒",
+			"VersionID": 1
+		},
+		"110": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+强兵",
+			"VersionID": 1
+		},
+		"111": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+炼兵",
+			"VersionID": 1
+		},
+		"112": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+法兵",
+			"VersionID": 1
+		},
+		"113": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+强兵",
+			"VersionID": 1
+		},
+		"114": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+炼兵",
+			"VersionID": 1
+		},
+		"115": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+法兵",
+			"VersionID": 1
+		},
+		"116": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+强兵",
+			"VersionID": 1
+		},
+		"117": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+炼兵",
+			"VersionID": 1
+		},
+		"118": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+法兵",
+			"VersionID": 1
+		},
+		"119": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-强英+铁兵",
+			"VersionID": 1
+		},
+		"12": 
+		{
+			"Difficulty": "简单",
+			"Formation": "random",
+			"GroupName": "黄巾-简单-教徒1",
+			"IgnoreGen": true,
+			"Monster1": "黄巾教徒",
+			"Monster2": "黄巾教徒",
+			"Monster3": "黄巾教徒",
+			"Monster4": "黄巾教徒",
+			"VersionID": 1
+		},
+		"120": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-强英+盾兵",
+			"VersionID": 1
+		},
+		"121": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-法英+铁兵",
+			"VersionID": 1
+		},
+		"122": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-法英+盾兵",
+			"VersionID": 1
+		},
+		"123": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-炼英+铁兵",
+			"VersionID": 1
+		},
+		"124": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-炼英+盾兵",
+			"VersionID": 1
+		},
+		"125": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]强英+铁兵",
+			"VersionID": 1
+		},
+		"126": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]强英+盾兵",
+			"VersionID": 1
+		},
+		"127": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]法英+铁兵",
+			"VersionID": 1
+		},
+		"128": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]法英+盾兵",
+			"VersionID": 1
+		},
+		"129": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]炼英+铁兵",
+			"VersionID": 1
+		},
+		"13": 
+		{
+			"Difficulty": "简单",
+			"Formation": "random",
+			"GroupName": "黄巾-简单-教徒2",
+			"IgnoreGen": true,
+			"Monster1": "黄巾教徒",
+			"Monster2": "黄巾教徒",
+			"Monster3": "黄巾教徒",
+			"Monster4": "黄巾教徒",
+			"Monster5": "黄巾教徒",
+			"Monster6": "黄巾教徒",
+			"VersionID": 1
+		},
+		"130": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]炼英+盾兵",
+			"VersionID": 1
+		},
+		"131": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+铁英",
+			"VersionID": 1
+		},
+		"132": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+盾英",
+			"VersionID": 1
+		},
+		"133": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+强英",
+			"VersionID": 1
+		},
+		"134": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+炼英",
+			"VersionID": 1
+		},
+		"135": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+法英",
+			"VersionID": 1
+		},
+		"136": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁英+刺英",
+			"VersionID": 1
+		},
+		"137": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+盾英",
+			"VersionID": 1
+		},
+		"138": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+强英",
+			"VersionID": 1
+		},
+		"139": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+炼英",
+			"VersionID": 1
+		},
+		"14": 
+		{
+			"Formation": "random",
+			"GroupName": "黄巾-简单-教徒3",
+			"IgnoreGen": true,
+			"Monster1": "黄巾教徒",
+			"Monster2": "黄巾教徒",
+			"Monster3": "黄巾教徒",
+			"Monster4": "黄巾教徒",
+			"Monster5": "黄巾教徒",
+			"Monster6": "黄巾教徒",
+			"Monster7": "黄巾教徒",
+			"Monster8": "黄巾教徒",
+			"VersionID": 1
+		},
+		"140": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+法英",
+			"VersionID": 1
+		},
+		"141": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾英+刺英",
+			"VersionID": 1
+		},
+		"142": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-强英+强英",
+			"VersionID": 1
+		},
+		"143": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-强英+炼英",
+			"VersionID": 1
+		},
+		"144": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-强英+法英",
+			"VersionID": 1
+		},
+		"145": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-强英+刺英",
+			"VersionID": 1
+		},
+		"146": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-炼英+炼英",
+			"VersionID": 1
+		},
+		"147": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-炼英+法英",
+			"VersionID": 1
+		},
+		"148": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-炼英+刺英",
+			"VersionID": 1
+		},
+		"149": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-法英+法英",
+			"VersionID": 1
+		},
+		"15": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-简单-铁兵",
+			"Monster1": "黄巾铁骑",
+			"Monster2": "黄巾铁骑",
+			"Monster3": "黄巾铁骑",
+			"Monster4": "黄巾铁骑",
+			"VersionID": 2
+		},
+		"150": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-法英+刺英",
+			"VersionID": 1
+		},
+		"151": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-刺英+刺英",
+			"VersionID": 1
+		},
+		"152": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+[B]铁英",
+			"VersionID": 1
+		},
+		"153": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+[B]盾英",
+			"VersionID": 1
+		},
+		"154": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+[B]强英",
+			"VersionID": 1
+		},
+		"155": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+[B]炼英",
+			"VersionID": 1
+		},
+		"156": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+[B]法英",
+			"VersionID": 1
+		},
+		"157": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]铁英+[B]刺英",
+			"VersionID": 1
+		},
+		"158": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+[B]盾英",
+			"VersionID": 1
+		},
+		"159": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+[B]强英",
+			"VersionID": 1
+		},
+		"16": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-[B]特法英+强兵-张宝",
+			"VersionID": 1
+		},
+		"160": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+[B]炼英",
+			"VersionID": 1
+		},
+		"161": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+[B]法英",
+			"VersionID": 1
+		},
+		"162": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]盾英+[B]刺英",
+			"VersionID": 1
+		},
+		"163": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]强英+[B]强英",
+			"VersionID": 1
+		},
+		"164": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]强英+[B]炼英",
+			"VersionID": 1
+		},
+		"165": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]强英+[B]法英",
+			"VersionID": 1
+		},
+		"166": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]强英+[B]刺英",
+			"VersionID": 1
+		},
+		"167": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]炼英+[B]炼英",
+			"VersionID": 1
+		},
+		"168": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]炼英+[B]法英",
+			"VersionID": 1
+		},
+		"169": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]炼英+[B]刺英",
+			"VersionID": 1
+		},
+		"17": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-[B]特法英-张梁",
+			"VersionID": 1
+		},
+		"170": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]法英+[B]法英",
+			"VersionID": 1
+		},
+		"171": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]法英+[B]刺英",
+			"VersionID": 1
+		},
+		"172": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-[B]刺英+[B]刺英",
+			"VersionID": 1
+		},
+		"173": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+铁英",
+			"VersionID": 1
+		},
+		"174": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+盾英",
+			"VersionID": 1
+		},
+		"175": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+强英",
+			"VersionID": 1
+		},
+		"176": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+炼英",
+			"VersionID": 1
+		},
+		"177": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+法英",
+			"VersionID": 1
+		},
+		"178": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+刺英",
+			"VersionID": 1
+		},
+		"179": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+盾英",
+			"VersionID": 1
+		},
+		"18": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-[B]铁英+特法英-张角",
+			"VersionID": 1
+		},
+		"180": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+强英",
+			"VersionID": 1
+		},
+		"181": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+炼英",
+			"VersionID": 1
+		},
+		"182": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+法英",
+			"VersionID": 1
+		},
+		"183": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+刺英",
+			"VersionID": 1
+		},
+		"184": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-强英+强英",
+			"VersionID": 1
+		},
+		"185": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-强英+炼英",
+			"VersionID": 1
+		},
+		"186": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-强英+法英",
+			"VersionID": 1
+		},
+		"187": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-强英+刺英",
+			"VersionID": 1
+		},
+		"188": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-炼英+炼英",
+			"VersionID": 1
+		},
+		"189": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-炼英+法英",
+			"VersionID": 1
+		},
+		"19": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-[B]铁英-张曼成",
+			"VersionID": 1
+		},
+		"190": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-炼英+刺英",
+			"VersionID": 1
+		},
+		"191": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-法英+法英",
+			"VersionID": 1
+		},
+		"192": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-法英+刺英",
+			"VersionID": 1
+		},
+		"193": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-刺英+刺英",
+			"VersionID": 1
+		},
+		"194": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]铁英",
+			"VersionID": 1
+		},
+		"195": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]盾英",
+			"VersionID": 1
+		},
+		"196": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]强英",
+			"VersionID": 1
+		},
+		"197": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]炼英",
+			"VersionID": 1
+		},
+		"198": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]法英",
+			"VersionID": 1
+		},
+		"199": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]刺英",
+			"VersionID": 1
+		},
+		"2": 
+		{
+			"Formation": "auto",
+			"GroupName": "测试-逃逸-吕布2",
+			"IgnoreGen": true,
+			"Monster1": "吕布",
+			"Monster2": "铁骑",
+			"Monster3": "铁骑",
+			"Monster4": "铁骑",
+			"Monster5": "强弓",
+			"Monster6": "强弓",
+			"Monster7": "强弓",
+			"Monster8": "强弓",
+			"VersionID": 1
+		},
+		"20": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-特法英",
+			"VersionID": 1
+		},
+		"200": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]盾英",
+			"VersionID": 1
+		},
+		"201": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]强英",
+			"VersionID": 1
+		},
+		"202": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]炼英",
+			"VersionID": 1
+		},
+		"203": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]法英",
+			"VersionID": 1
+		},
+		"204": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]刺英",
+			"VersionID": 1
+		},
+		"205": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]强英+[B]强英",
+			"VersionID": 1
+		},
+		"206": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]强英+[B]炼英",
+			"VersionID": 1
+		},
+		"207": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]强英+[B]法英",
+			"VersionID": 1
+		},
+		"208": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]强英+[B]刺英",
+			"VersionID": 1
+		},
+		"209": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]炼英+[B]炼英",
+			"VersionID": 1
+		},
+		"21": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-铁兵+法兵",
+			"VersionID": 1
+		},
+		"210": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]炼英+[B]法英",
+			"VersionID": 1
+		},
+		"211": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]炼英+[B]刺英",
+			"VersionID": 1
+		},
+		"212": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]法英+[B]法英",
+			"VersionID": 1
+		},
+		"213": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]法英+[B]刺英",
+			"VersionID": 1
+		},
+		"214": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]刺英+[B]刺英",
+			"VersionID": 1
+		},
+		"215": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+铁英+强英",
+			"VersionID": 1
+		},
+		"216": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+铁英+炼英",
+			"VersionID": 1
+		},
+		"217": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+铁英+法英",
+			"VersionID": 1
+		},
+		"218": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+铁英+刺英",
+			"VersionID": 1
+		},
+		"219": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+盾英+强英",
+			"VersionID": 1
+		},
+		"22": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-困难-铁英",
+			"VersionID": 1
+		},
+		"220": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+盾英+炼英",
+			"VersionID": 1
+		},
+		"221": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+盾英+法英",
+			"VersionID": 1
+		},
+		"222": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+盾英+刺英",
+			"VersionID": 1
+		},
+		"223": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+盾英+强英",
+			"VersionID": 1
+		},
+		"224": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+盾英+炼英",
+			"VersionID": 1
+		},
+		"225": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+盾英+法英",
+			"VersionID": 1
+		},
+		"226": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+盾英+刺英",
+			"VersionID": 1
+		},
+		"227": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]铁英+[B]强英",
+			"VersionID": 1
+		},
+		"228": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]铁英+[B]炼英",
+			"VersionID": 1
+		},
+		"229": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]铁英+[B]法英",
+			"VersionID": 1
+		},
+		"23": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-法兵",
+			"VersionID": 1
+		},
+		"230": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]铁英+[B]刺英",
+			"VersionID": 1
+		},
+		"231": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]盾英+[B]强英",
+			"VersionID": 1
+		},
+		"232": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]盾英+[B]炼英",
+			"VersionID": 1
+		},
+		"233": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]盾英+[B]法英",
+			"VersionID": 1
+		},
+		"234": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]盾英+[B]刺英",
+			"VersionID": 1
+		},
+		"235": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]盾英+[B]强英",
+			"VersionID": 1
+		},
+		"236": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]盾英+[B]炼英",
+			"VersionID": 1
+		},
+		"237": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]盾英+[B]法英",
+			"VersionID": 1
+		},
+		"238": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]盾英+[B]刺英",
+			"VersionID": 1
+		},
+		"239": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+强英+强英",
+			"VersionID": 1
+		},
+		"24": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-教徒",
+			"VersionID": 1
+		},
+		"240": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+炼英+炼英",
+			"VersionID": 1
+		},
+		"241": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+法英+法英",
+			"VersionID": 1
+		},
+		"242": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+刺英+刺英",
+			"VersionID": 1
+		},
+		"243": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+强英+炼英",
+			"VersionID": 1
+		},
+		"244": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+强英+法英",
+			"VersionID": 1
+		},
+		"245": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+炼英+法英",
+			"VersionID": 1
+		},
+		"246": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+炼英+刺英",
+			"VersionID": 1
+		},
+		"247": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-铁英+法英+刺英",
+			"VersionID": 1
+		},
+		"248": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+炼英+炼英",
+			"VersionID": 1
+		},
+		"249": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+法英+法英",
+			"VersionID": 1
+		},
+		"25": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-强兵",
+			"VersionID": 1
+		},
+		"250": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+刺英+刺英",
+			"VersionID": 1
+		},
+		"251": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+强英+炼英",
+			"VersionID": 1
+		},
+		"252": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+强英+法英",
+			"VersionID": 1
+		},
+		"253": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+炼英+法英",
+			"VersionID": 1
+		},
+		"254": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+炼英+刺英",
+			"VersionID": 1
+		},
+		"255": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-盾英+法英+刺英",
+			"VersionID": 1
+		},
+		"256": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]强英+[B]强英",
+			"VersionID": 1
+		},
+		"257": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]炼英+[B]炼英",
+			"VersionID": 1
+		},
+		"258": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]法英+[B]法英",
+			"VersionID": 1
+		},
+		"259": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]刺英+[B]刺英",
+			"VersionID": 1
+		},
+		"26": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-特法英",
+			"VersionID": 1
+		},
+		"260": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]强英+[B]炼英",
+			"VersionID": 1
+		},
+		"261": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]强英+[B]法英",
+			"VersionID": 1
+		},
+		"262": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]炼英+[B]法英",
+			"VersionID": 1
+		},
+		"263": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]炼英+[B]刺英",
+			"VersionID": 1
+		},
+		"264": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]铁英+[B]法英+[B]刺英",
+			"VersionID": 1
+		},
+		"265": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]炼英+[B]炼英",
+			"VersionID": 1
+		},
+		"266": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]法英+[B]法英",
+			"VersionID": 1
+		},
+		"267": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]刺英+[B]刺英",
+			"VersionID": 1
+		},
+		"268": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]强英+[B]炼英",
+			"VersionID": 1
+		},
+		"269": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]强英+[B]法英",
+			"VersionID": 1
+		},
+		"27": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-铁兵+法兵",
+			"VersionID": 1
+		},
+		"270": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]炼英+[B]法英",
+			"VersionID": 1
+		},
+		"271": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]炼英+[B]刺英",
+			"VersionID": 1
+		},
+		"272": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-超难-[B]盾英+[B]法英+[B]刺英",
+			"VersionID": 1
+		},
+		"273": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+铁英+强英",
+			"VersionID": 1
+		},
+		"274": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+铁英+炼英",
+			"VersionID": 1
+		},
+		"275": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+铁英+法英",
+			"VersionID": 1
+		},
+		"276": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+铁英+刺英",
+			"VersionID": 1
+		},
+		"277": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+盾英+强英",
+			"VersionID": 1
+		},
+		"278": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+盾英+炼英",
+			"VersionID": 1
+		},
+		"279": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+盾英+法英",
+			"VersionID": 1
+		},
+		"28": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-铁兵+强兵",
+			"VersionID": 1
+		},
+		"280": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+盾英+刺英",
+			"VersionID": 1
+		},
+		"281": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+盾英+强英",
+			"VersionID": 1
+		},
+		"282": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+盾英+炼英",
+			"VersionID": 1
+		},
+		"283": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+盾英+法英",
+			"VersionID": 1
+		},
+		"284": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+盾英+刺英",
+			"VersionID": 1
+		},
+		"285": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]铁英+[B]强英",
+			"VersionID": 1
+		},
+		"286": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]铁英+[B]炼英",
+			"VersionID": 1
+		},
+		"287": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]铁英+[B]法英",
+			"VersionID": 1
+		},
+		"288": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]铁英+[B]刺英",
+			"VersionID": 1
+		},
+		"289": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]盾英+[B]强英",
+			"VersionID": 1
+		},
+		"29": 
+		{
+			"Formation": "heros",
+			"GroupName": "黄巾-普通-铁英",
+			"VersionID": 1
+		},
+		"290": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]盾英+[B]炼英",
+			"VersionID": 1
+		},
+		"291": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]盾英+[B]法英",
+			"VersionID": 1
+		},
+		"292": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]盾英+[B]刺英",
+			"VersionID": 1
+		},
+		"293": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]盾英+[B]强英",
+			"VersionID": 1
+		},
+		"294": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]盾英+[B]炼英",
+			"VersionID": 1
+		},
+		"295": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]盾英+[B]法英",
+			"VersionID": 1
+		},
+		"296": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]盾英+[B]刺英",
+			"VersionID": 1
+		},
+		"297": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+强英+强英",
+			"VersionID": 1
+		},
+		"298": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+炼英+炼英",
+			"VersionID": 1
+		},
+		"299": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+法英+法英",
+			"VersionID": 1
+		},
+		"3": 
+		{
+			"Formation": "auto",
+			"GroupName": "测试-逃逸-吕布3",
+			"IgnoreGen": true,
+			"Monster1": "左慈",
+			"Monster10": "强弓",
+			"Monster11": "强弓",
+			"Monster12": "强弓",
+			"Monster2": "法师",
+			"Monster3": "法师",
+			"Monster4": "法师",
+			"Monster5": "吕布",
+			"Monster6": "铁骑",
+			"Monster7": "铁骑",
+			"Monster8": "铁骑",
+			"Monster9": "强弓",
+			"VersionID": 1
+		},
+		"30": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-铁兵",
+			"VersionID": 1
+		},
+		"300": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+刺英+刺英",
+			"VersionID": 1
+		},
+		"301": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+强英+炼英",
+			"VersionID": 1
+		},
+		"302": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+强英+法英",
+			"VersionID": 1
+		},
+		"303": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+炼英+法英",
+			"VersionID": 1
+		},
+		"304": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+炼英+刺英",
+			"VersionID": 1
+		},
+		"305": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-铁英+法英+刺英",
+			"VersionID": 1
+		},
+		"306": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+炼英+炼英",
+			"VersionID": 1
+		},
+		"307": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+法英+法英",
+			"VersionID": 1
+		},
+		"308": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+刺英+刺英",
+			"VersionID": 1
+		},
+		"309": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+强英+炼英",
+			"VersionID": 1
+		},
+		"31": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-盾兵",
+			"VersionID": 1
+		},
+		"310": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+强英+法英",
+			"VersionID": 1
+		},
+		"311": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+炼英+法英",
+			"VersionID": 1
+		},
+		"312": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+炼英+刺英",
+			"VersionID": 1
+		},
+		"313": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-盾英+法英+刺英",
+			"VersionID": 1
+		},
+		"314": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]强英+[B]强英",
+			"VersionID": 1
+		},
+		"315": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]炼英+[B]炼英",
+			"VersionID": 1
+		},
+		"316": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]法英+[B]法英",
+			"VersionID": 1
+		},
+		"317": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]刺英+[B]刺英",
+			"VersionID": 1
+		},
+		"318": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]强英+[B]炼英",
+			"VersionID": 1
+		},
+		"319": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]强英+[B]法英",
+			"VersionID": 1
+		},
+		"32": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-强兵",
+			"VersionID": 1
+		},
+		"320": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]炼英+[B]法英",
+			"VersionID": 1
+		},
+		"321": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]炼英+[B]刺英",
+			"VersionID": 1
+		},
+		"322": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]铁英+[B]法英+[B]刺英",
+			"VersionID": 1
+		},
+		"323": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]炼英+[B]炼英",
+			"VersionID": 1
+		},
+		"324": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]法英+[B]法英",
+			"VersionID": 1
+		},
+		"325": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]刺英+[B]刺英",
+			"VersionID": 1
+		},
+		"326": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]强英+[B]炼英",
+			"VersionID": 1
+		},
+		"327": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]强英+[B]法英",
+			"VersionID": 1
+		},
+		"328": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]炼英+[B]法英",
+			"VersionID": 1
+		},
+		"329": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]炼英+[B]刺英",
+			"VersionID": 1
+		},
+		"33": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-炼兵",
+			"VersionID": 1
+		},
+		"330": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-变态-[B]盾英+[B]法英+[B]刺英",
+			"VersionID": 1
+		},
+		"34": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-法兵",
+			"VersionID": 1
+		},
+		"35": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-刺兵",
+			"VersionID": 1
+		},
+		"36": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-教徒",
+			"VersionID": 1
+		},
+		"37": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-铁兵+炼兵",
+			"VersionID": 1
+		},
+		"38": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-铁兵+强兵",
+			"VersionID": 1
+		},
+		"39": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-铁兵+法兵",
+			"VersionID": 1
+		},
+		"4": 
+		{
+			"GroupName": "新手关1",
+			"IgnoreGen": true,
+			"Monster1": "铁骑",
+			"Monster2": "盾甲",
+			"Monster3": "黄巾教徒",
+			"Monster4": "黄巾法师",
+			"Monster5": "黄巾铁骑",
+			"VersionID": 1
+		},
+		"40": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-盾兵+炼兵",
+			"VersionID": 1
+		},
+		"41": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-盾兵+强兵",
+			"VersionID": 1
+		},
+		"42": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-简单-盾兵+法兵",
+			"VersionID": 1
+		},
+		"43": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁兵",
+			"VersionID": 1
+		},
+		"44": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾兵",
+			"VersionID": 1
+		},
+		"45": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-强兵",
+			"VersionID": 1
+		},
+		"46": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-炼兵",
+			"VersionID": 1
+		},
+		"47": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-法兵",
+			"VersionID": 1
+		},
+		"48": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-刺兵",
+			"VersionID": 1
+		},
+		"49": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-教徒",
+			"VersionID": 1
+		},
+		"5": 
+		{
+			"GroupName": "新手关2",
+			"IgnoreGen": true,
+			"Monster1": "新手-蹇图",
+			"Monster2": "盾甲",
+			"Monster3": "铁骑",
+			"Monster4": "强弓",
+			"VersionID": 1
+		},
+		"50": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁兵+炼兵",
+			"VersionID": 1
+		},
+		"51": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁兵+强兵",
+			"VersionID": 1
+		},
+		"52": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁兵+法兵",
+			"VersionID": 1
+		},
+		"53": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾兵+炼兵",
+			"VersionID": 1
+		},
+		"54": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾兵+强兵",
+			"VersionID": 1
+		},
+		"55": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾兵+法兵",
+			"VersionID": 1
+		},
+		"56": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁英",
+			"VersionID": 1
+		},
+		"57": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾英",
+			"VersionID": 1
+		},
+		"58": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-强英",
+			"VersionID": 1
+		},
+		"59": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-炼英",
+			"VersionID": 1
+		},
+		"6": 
+		{
+			"GroupName": "新手关3",
+			"IgnoreGen": true,
+			"Monster1": "马元义",
+			"Monster2": "黄巾铁骑",
+			"Monster3": "黄巾法师",
+			"Monster4": "黄巾箭塔",
+			"VersionID": 1
+		},
+		"60": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-法英",
+			"VersionID": 1
+		},
+		"61": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-刺英",
+			"VersionID": 1
+		},
+		"62": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]铁英",
+			"VersionID": 1
+		},
+		"63": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]盾英",
+			"VersionID": 1
+		},
+		"64": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]强英",
+			"VersionID": 1
+		},
+		"65": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]炼英",
+			"VersionID": 1
+		},
+		"66": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]法英",
+			"VersionID": 1
+		},
+		"67": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]刺英",
+			"VersionID": 1
+		},
+		"68": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁英+强兵",
+			"VersionID": 1
+		},
+		"69": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁英+炼兵",
+			"VersionID": 1
+		},
+		"7": 
+		{
+			"GroupName": "新手关4",
+			"IgnoreGen": true,
+			"Monster1": "盾甲",
+			"Monster2": "强弓",
+			"Monster3": "法师",
+			"Monster4": "敌方马车",
+			"VersionID": 1
+		},
+		"70": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-铁英+法兵",
+			"VersionID": 1
+		},
+		"71": 
+		{
+			"Difficulty": "超难",
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾英+强兵",
+			"VersionID": 1
+		},
+		"72": 
+		{
+			"Difficulty": "超难",
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾英+炼兵",
+			"VersionID": 1
+		},
+		"73": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-盾英+法兵",
+			"VersionID": 1
+		},
+		"74": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]铁英+强兵",
+			"VersionID": 1
+		},
+		"75": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]铁英+炼兵",
+			"VersionID": 1
+		},
+		"76": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]铁英+法兵",
+			"VersionID": 1
+		},
+		"77": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]盾英+强兵",
+			"VersionID": 1
+		},
+		"78": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]盾英+炼兵",
+			"VersionID": 1
+		},
+		"79": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]盾英+法兵",
+			"VersionID": 1
+		},
+		"8": 
+		{
+			"GroupName": "新手关5",
+			"IgnoreGen": true,
+			"Monster1": "左慈",
+			"Monster2": "盾甲",
+			"Monster3": "强弓",
+			"Monster4": "黄巾教徒",
+			"VersionID": 1
+		},
+		"80": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-强英+铁兵",
+			"VersionID": 1
+		},
+		"81": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-强英+盾兵",
+			"VersionID": 1
+		},
+		"82": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-法英+铁兵",
+			"VersionID": 1
+		},
+		"83": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-法英+盾兵",
+			"VersionID": 1
+		},
+		"84": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-炼英+铁兵",
+			"VersionID": 1
+		},
+		"85": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-炼英+盾兵",
+			"VersionID": 1
+		},
+		"86": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]强英+铁兵",
+			"VersionID": 1
+		},
+		"87": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]强英+盾兵",
+			"VersionID": 1
+		},
+		"88": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]法英+铁兵",
+			"VersionID": 1
+		},
+		"89": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]法英+盾兵",
+			"VersionID": 1
+		},
+		"9": 
+		{
+			"GroupName": "三国-普通-自爆兵",
+			"IgnoreGen": true,
+			"Monster1": "自爆兵",
+			"VersionID": 1
+		},
+		"90": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]炼英+铁兵",
+			"VersionID": 1
+		},
+		"91": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-普通-[B]炼英+盾兵",
+			"VersionID": 1
+		},
+		"92": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+炼兵",
+			"VersionID": 1
+		},
+		"93": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+强兵",
+			"VersionID": 1
+		},
+		"94": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+法兵",
+			"VersionID": 1
+		},
+		"95": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾兵+炼兵",
+			"VersionID": 1
+		},
+		"96": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾兵+强兵",
+			"VersionID": 1
+		},
+		"97": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-盾兵+法兵",
+			"VersionID": 1
+		},
+		"98": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+盾兵+强兵",
+			"VersionID": 1
+		},
+		"99": 
+		{
+			"Formation": "heros",
+			"GroupName": "三国-困难-铁兵+盾兵+炼兵",
+			"VersionID": 1
+		}
+	}
+}
